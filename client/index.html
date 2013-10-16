@@ -8,6 +8,7 @@
 	<title>Bring2Me</title>
 	<!--<script type="text/javascript"   src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>-->
 	<script type="text/javascript"   src="js/angular.min.js"></script>
+	<script	type="text/javascript"   src="lib/main.js"></script>
 	<!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">-->
 	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 	<link rel="stylesheet" href="css/signin.css" media="screen">
@@ -30,13 +31,13 @@
 			</div>
 		</div>
 		
-		<div class="container">
-			<form class="form-signin">
+		<div class="container" ng-controller='MainCtrl'>
+			<form ng-submit='login()' class="form-signin">
 				<h2 class="form-signin-heading">Please sign in</h2>
-				<input type="text"      class="form-control" placeholder="Email address" autofocus>
-				<input type="password"  class="form-control" placeholder="Password">
+				<input type="email"     class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
+				<input type="password"  class="form-control" ng-model="user.password" placeholder="Password"/>
 				<label class="checkbox">
-					<input type="checkbox" value="remember-me">Remember me
+					<input type="checkbox" value="remember-me"/>Remember me
 				</label>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 			</form>

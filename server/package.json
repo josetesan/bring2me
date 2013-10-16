@@ -1,18 +1,19 @@
 {
-  "name": "server",
+  "name": "b2meServer",
   "version": "0.0.0",
   "description": "This is the Backend to the Bring2Me service",
-  "main": "server.js",
+  "main": "service.js",
   "dependencies": {
     "hiredis": "~0.1.15",
     "redis": "~0.8.6",
     "pg" : "~2.7.0",
-    "express" : "~3.4.0"
+    "express" : "~3.4.0",
+    "winston" : "~0.7.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node service.js"
   },
   "author": "Jose Luis Sanchez Romero",
   "license": "BSD-2-Clause"
