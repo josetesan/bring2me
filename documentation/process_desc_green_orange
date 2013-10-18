@@ -1,0 +1,140 @@
+
+Usuario entra en www.?name>.com
+
+ 
+
+
+ [nos centramos en el proceso color=> verde]
+
+Entro en la parte superior (y puede hacer link) –navigation bar (navbar)- veo los siguientes links
+
+•	Casa
+•	Que es ?name?
+•	Terminos legales
+•	Sobre la empresa
+•	Social Delivery Activity
+•	Connect In
+
+Si voy hacia abajo, navbar esta fija.
+
+Pincho en casa, me lleva a www.?name?.com
+
+Pincho en “que es ?name?”, te lleva a esta pagina en donde se explica que es ?name?. En la parte de arriba aparece –navbar-
+
+•	Casa
+•	Que es ?name?
+•	Terminos legales
+•	Sobre la empresa
+•	Social Delivery Activity
+•	Connect In
+
+Si tiro hacia abajo, navbar esta fija en la parte superior. 
+
+
+
+Pincho en casa, y vuelvo a la pagina principal, www.?name?.com
+
+Pincho en “terminos legales”, me lleva a la pagina donde veo los terminos legales. La navbar contiene la misma navbar vista anteriormente. 
+
+•	Casa
+•	Que es ?name?
+•	Terminos legales
+•	Sobre la empresa
+•	Social Delivery Activity
+•	Connect In
+
+
+Navbar esta fija si tiro (scroll down) hacia abajo.
+
+Pincho en casa, y vuelvo a la pagina principal, www.?name?.com
+
+Pincho en “sobre la empresa”, y me lleva la pagina donde veo informacion sobre la empresa y  quien esta detras de ella. 
+
+Mismo navbar que en las paginas vistas anteriores. Navbar fija.
+
+Pincho en casa, y vuelvo a la pagina principal, www.?name?.com
+
+Pincho en “Social Delivery Activity”, me lleva a una pagina en donde veo los request activos que hay en ese momento, si puede ser, en mi pais. No puedo hacer mas, para ello me debo de registrar (connect in)
+
+Mismo navbar que en otras paginas vistas hasta ahora.
+
+Si pincho en cualquier de los links  de arriba voy al sitio requerido. Pincho en casa, y voy a la pagina principal. 
+
+Pinco en “connect in”. Veo dos tabs, una para connectar si ya soy un usuario existente, y otra tab en donde dice nuevo cliente. 
+
+
+
+
+
+
+
+
+
+[nos centramos en el proceso color=> naranja]
+
+ 
+
+
+
+ROLE_1 CLIENTE NUEVO
+
+Pinco en “connect in”. Veo dos tabs, una para connectar si ya soy un usuario existente, y otra tab en donde dice nuevo cliente. 
+
+Pincho en “Nuevo usuario”, en donde aparece los siguientes campos, 
+
+1.	email
+2.	nickname
+3.	pwd
+4.	country
+
+y un boton que dice submit/accept conditions
+
+Hay un referencia a que si entro, acepto las condiciones del servicio que ?name? presta, y aparece un link a la pagina de condiciones legales, con el fin de conocerlas antes de aceptar el servicio.
+
+Los cuatro campos de arriba con obligatorios. Hay un validacion en email, pues tiene ser que un email correcto. 
+
+Nickname deberia ser unico. El sistema valide si existe (* proceso intento db), que le asigne un numero aleatorio (es decir si xxx existe, que le de xxx29 )  y que continue con el proceso de registro. 
+
+No hay un proceso de validacion de pwd, ni de “Fortaleza”, puedo poner cualquier pwd, incluso si es de un solo character. El sistema no tiene que permitir nil values 
+
+Country es una lista de valores.
+
+Intento entrar en dar un nick name, y el sistema no deja, intento lo mimso con pwd, tampoco deja entrar, y hago lo mismo 
+
+Entro datos correctos, y pingo en submit/accept , voy a una area (proceso azul)
+
+ROLE_2 CLIENTE NO NUEVO
+
+Pincho en “connect in”. Veo dos tabs, una para connectar si ya soy un usuario existente, y otra tab en donde dice nuevo cliente. 
+
+Pincho en “usuario registrado”, en donde aparece los siguientes campos, 
+
+1.	email
+2.	pwd
+3.	valor aleatorio que aparece en rojo, con el fin de enviar sqlinjection . (prototype). Valor rojo es generado por cada session, y puede ir en function del tiempo (datetime)
+
+Validacion de email ( que sea correcto name@domain). Proceso de validacion de email pwd y de valor. Si todo correcto (proceso azul)
+
+Si no me acuerdo de pwd, hay un link abajo que dice “generar nuevo pwd” . 
+
+Meto una cuenta incorrecta, el sistema me dice que esa cuenta no esta registrada.
+
+Meto el email correcto, y me indica que se ha enviado un email a esa cuenta con un pwd temporal.
+
+El email enviado contiene un pwd generado (combinacion letras y numeros, eg 32bc2px).  Me indica el email que ese pwd lo puedo cambiar en cualquier momento.
+
+Vuelvo a la zona de “usuario registrado”, entro email, pwd, y el valor-aleatorio que ahora aprece. Despues de la validacion, el sistema me lleva a la nueva area [proceso azul]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
