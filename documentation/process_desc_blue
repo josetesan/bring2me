@@ -1,0 +1,118 @@
+[nos centramos en el proceso color=> azul]
+
+
+ 
+
+
+Entro y veo una navbar (fija) con los siguientes links (arriba)
+
+•	My realm/Mi area
+•	My Deliveries/Actividad
+•	Request/Peticiones
+•	Ver toda la actividad (mi pais,pero puedo seleccionar otros)
+•	Salir
+
+De entrar me lleva a ver toda la actividad (default page)
+
+Pincho en “mi area”, se despliega una subnavbar dejo de la principal , por default voy a “mi area”, unica area en ese subnavbar.
+
+Dividida en secciones:
+
+1.- Cuenta email, no se puede cambiar. Lo mismo pasa con usuario, no se puede cambiar
+2.- Contraseña, en donde si se puede cambiar el pwd. 
+3.- Rating, 
+	Ver mi rating medio
+	Dar reting a personas que han aceptado un servicio.
+4.- Borrar mi cuenta.. Borro mi cuenta , y automaticamente salgo y voy a la pagina principal. Intento entrar y el sistema no me identifica como un usuario, debo registrarme. 
+
+Pincho en mi “actividad”, y sale en el subnavbar las diferentes opciones.:
+
+1.	Mis requerimientos (by default )
+2.	 (ira en function del service). Mis servicios
+
+Pincho en ‘mis requerimientos”(1). En esta table veo todo los requests que he creado. 
+
+Veo quien ha solicitado la peticion, puedo ver su rating de cada person 
+
+
+Condiciones:
+
+1.- Acepto una penticion 
+
+Por cada request creado no puedo recibir mas de cinco peticiones. Veo todas las peticiones, eligo una peticion. 
+
+Si es servicio de pago ..
+
+Esto me lleva a pagar, con cc/ or paypal. 
+
+Pago, 0.89 (moneda? -> segun haya elegido anteriormente, cuando cree el request)
+
+El status del request cambia ha aceptado
+
+Email enviado a la persona correspondiente (solicitante)
+
+Si no es servicio de pago ..
+
+
+El status del request cambia ha aceptado
+
+Email enviado a la persona correspondiente (solicitante)
+
+
+2.- Peticion, modificar
+
+(situacion) He creado request, que solo este disponible durante 2 horas.  Seleccionar request para poder modficar algo, incluido tiempo.
+
+Tambien tengo opcion de borrar request. 
+
+
+
+Pincho en ‘he llevado”(2). Servicio que he aceptado llevar
+
+Veo las peticiones que he pedido llevar, status pending. 
+
+En caso de que sea cancelado el requester, el status  cambia ha cancelado
+
+En caso de que sea concecido, el status cambia ha aceptado. Recibo un email con la informacion completa del request.
+
+Pincho en ‘he llevado”(2). Servicio que he aceptado llevar
+
+Veo las peticiones que he pedido llevar, status pending. 
+
+En caso de que sea cancelado el requester, el status  cambia ha cancelado
+
+En caso de que sea concecido, el status cambia ha aceptado. Recibo un email con la informacion completa del request.
+
+En caso de que sea concecido a otra persona, el status cambia no acceptado. 
+
+
+
+Pincho en “peticiones”.
+
+El template que veo va en funcion del servicio. Ahora mismo tenemos tres servicios, dos de pago uno gratuito. 
+
+
+Pincho en “Ver toda la actividad (mi pais,pero puedo seleccionar otros)” , 
+
+Veo la actividad del mi pais. Pero puedo cambiar a otro. Puedo buscar por los diferentes servicios ofrecidos, y por ciudad/location
+
+Selecciono uno de las peticio, confirmacion de que me he subscrito a ella. Dicha peticion ahora aparece en mi area (my activity) como pending.
+
+Pindo en “Salir”.. y salgo www.?name?.com
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
