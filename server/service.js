@@ -1,11 +1,21 @@
 //var http = require('http');
 //var client = require("redis").createClient();
 var winston = require('winston');
+var petitions = require('./data/petitions.json');
 //var pg = require('pg');
 //var conString = "postgres://postgres:5432@localhost/bring2me";
 //var client = new pg.Client(conString);
 var express = require('express');
-var app = express();
+var app = express()
+  .use(express.urlencoded())
+  .use(express.json())
+  .use(express.static('public'));
+
+
+app.get('/petitions', function  (request, response) {
+  response.json(petitions);
+});
+
 
 
 

@@ -1,4 +1,4 @@
-controllers.controller('MainCtrl', function($scope,$location, Auth) {
+controllers.controller('MainCtrl', function($scope,Auth) {
 
 
 	$scope.main = {
@@ -14,7 +14,7 @@ controllers.controller('MainCtrl', function($scope,$location, Auth) {
 			if (data.error) {
 				toastr.error(data.error)
 			} else {
-				toastr.success("You are signedin");
+				toastr.success("You are signed-in");
 				$scope.main.credentials = {};
 			}
 		});
