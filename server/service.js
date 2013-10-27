@@ -9,10 +9,11 @@ var express = require('express');
 var app = express()
   .use(express.urlencoded())
   .use(express.json())
-  .use(express.static('public'));
+  .use(express.static('../client'));
 
 
 app.get('/petitions', function  (request, response) {
+  logger.info("Request received, answering with data");
   response.json(petitions);
 });
 
