@@ -2,9 +2,7 @@
 //var client = require("redis").createClient();
 var winston = require('winston');
 var petitions = require('./data/petitions.json');
-//var pg = require('pg');
-//var conString = "postgres://postgres:5432@localhost/bring2me";
-//var client = new pg.Client(conString);
+var client = require('./config/postgres.js');
 var express = require('express');
 var app = express()
   .use(express.urlencoded())
@@ -14,7 +12,23 @@ var app = express()
 
 app.get('/petitions', function  (request, response) {
   logger.info("Request received, answering with data");
-  response.json(petitions);
+
+  client.connect(function(err) {
+    if (err) {
+      return console.error('could not connect ',err);
+    }
+    var query = client.query('SELECT SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,OWNERID FROM REQUESTS');
+
+    query.on('row',function(row) {
+        console.log(row.ownerid+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
+    });
+
+    query.on('end',function(result) {
+        client.end();
+        console.log(result.rowCount + ' rows were received');
+    });
+  });
+  
 });
 
 
