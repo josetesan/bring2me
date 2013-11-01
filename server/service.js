@@ -26,8 +26,9 @@ app.get('/petitions', function  (request, response) {
     query.on('end',function(result) {
         client.end();
         console.log(result.rowCount + ' rows were received');
-        response.json(JSON.stringify(result.rows,null,"    "));
+        response.json(result.rows);
     });
+
   });
 
 });
