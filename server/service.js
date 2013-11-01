@@ -1,7 +1,6 @@
 //var http = require('http');
 //var client = require("redis").createClient();
 var winston = require('winston');
-var petitions = require('./data/petitions.json');
 var client = require('./config/postgres.js');
 var express = require('express');
 var app = express()
@@ -19,16 +18,18 @@ app.get('/petitions', function  (request, response) {
     }
     var query = client.query('SELECT SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,OWNERID FROM REQUESTS');
 
-    query.on('row',function(row) {
-        console.log(row.ownerid+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
+    query.on('row',function(row,result) {
+        //console.log(row.ownerid+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
+        result.addRow(row);
     });
 
     query.on('end',function(result) {
         client.end();
         console.log(result.rowCount + ' rows were received');
+        response.json(JSON.stringify(result.rows,null,"    "));
     });
   });
-  
+
 });
 
 
