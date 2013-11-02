@@ -1,0 +1,25 @@
+<div class="pull-left span6">
+	<h3>Displaying {{requests.length}} Requests</h3>
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<thead>
+				<th>ALIAS</th>
+				<th>SOURCE</th>
+				<th>DESTINATION</th>
+				<th>SUBJECT</th>
+				<th>REWARD</th>
+				<th>DUEDATE</th>
+				<th>BOTON</th>
+			</thead>
+			<tr ng-repeat="request in requests">
+				<td>{{request.alias}}</td>
+				<td>{{request.source}}</td>
+				<td>{{request.destination}}</td>
+				<td>{{request.subject}}</td>
+				<td>{{request.reward}}</td>
+				<td>{{request.duedate}}</td>
+				<td><a id="createOrder" class="btn btn-lg btn-primary" ng-href=''>I'll Do it !</td>
+			</tr>
+		</table>
+	</div>
+</div>

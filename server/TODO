@@ -1,4 +1,4 @@
-1. Add Client pooling to postgres
-https://github.com/brianc/node-postgres
+1. Add Client pooling to postgres (DONE)
+https://github.com/brianc/node-postgres 
 2. Check GeoIP
 https://github.com/bluesmoon/node-geoip

@@ -1,7 +1,8 @@
 //var http = require('http');
 //var client = require("redis").createClient();
 var winston = require('winston');
-var client = require('./config/postgres.js');
+var conString = require('./config/postgres_pool.js');
+var pg = require('pg');
 var express = require('express');
 var app = express()
   .use(express.urlencoded())
@@ -9,22 +10,26 @@ var app = express()
   .use(express.static('../client'));
 
 
-app.get('/petitions', function  (request, response) {
+app.get('/requests', function  (request, response) {
   logger.info("Request received, answering with data");
 
-  client.connect(function(err) {
+  pg.connect(conString,function(err,client,done) {
     if (err) {
       return console.error('could not connect ',err);
     }
-    var query = client.query('SELECT SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,OWNERID FROM REQUESTS');
+    var query = client.query('SELECT SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,ALIAS FROM REQUESTS R, USERS U where R.ownerid = U.user_id');
 
     query.on('row',function(row,result) {
-        //console.log(row.ownerid+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
+        console.log(row.alias+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
         result.addRow(row);
     });
 
+    query.on('error', function(error) {
+      console.log('Error on querying',error);
+    });
+
     query.on('end',function(result) {
-        client.end();
+        done();
         console.log(result.rowCount + ' rows were received');
         response.json(result.rows);
     });
@@ -33,6 +38,24 @@ app.get('/petitions', function  (request, response) {
 
 });
 
+app.post('/order',function (request,response) {
+  
+  logger.info("An user has ordered a request");
+
+  client.connect(function(err) {
+    if (err)  {
+      return console.error('Could not connect',err);
+    }
+
+    // check maximum requests are not reached
+
+    // update request counter
+
+    // insert new order
+
+  });
+
+});
 
 
 

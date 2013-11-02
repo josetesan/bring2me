@@ -1,8 +1,8 @@
-angular.module('bring2me', ['petitionsService'])
+angular.module('bring2me', ['requestsService'])
 	.config(appRouter);
 
 function appRouter ($routeProvider) {
 	$routeProvider
-		.when('/', 		{templateUrl: 'partials/petitions.html' , controller: 'petitionsCtrl' })
-		.when('/login', {templateUrl: 'partials/login.html'     , controller: 'loginCtrl'});
+		.when('/', 		{ templateUrl: 'partials/requests.html' , controller: 'requestsCtrl' })
+		.when('/login', { templateUrl: 'partials/login.html'    , controller: 'loginCtrl'    });
 }

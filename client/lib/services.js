@@ -1,6 +1,6 @@
-angular.module('petitionsService',['ngResource'])
-	.factory('DBPetition',function ($resource) {
-		return $resource('/petitions');
+angular.module('requestsService',['ngResource'])
+	.factory('DBRequest',function ($resource) {
+		return $resource('/requests');
 	}
 );
 
