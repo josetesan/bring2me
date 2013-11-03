@@ -1,7 +1,7 @@
-<form ng-submit='login()' class="form-signin">
+<form ng-controller='loginCtrl' ng-submit='login()' class="form-signin">
 	<h2 class="form-signin-heading">Please sign in</h2>
-	<input type="email"     class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
-	<input type="password"  class="form-control" ng-model="user.password" placeholder="Password"/>
+	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
+	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
 	<label class="checkbox">
 		<input type="checkbox" value="remember-me"/>Remember me
 	</label>

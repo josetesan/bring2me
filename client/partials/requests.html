@@ -1,7 +1,7 @@
-<div class="pull-left span6">
+<div class='pull-left span6'>
 	<h3>Displaying {{requests.length}} Requests</h3>
-	<div class="table-responsive">
-		<table class="table table-hover">
+	<div class='table-responsive'>
+		<table class='table table-hover'>
 			<thead>
 				<th>ALIAS</th>
 				<th>SOURCE</th>
@@ -9,16 +9,22 @@
 				<th>SUBJECT</th>
 				<th>REWARD</th>
 				<th>DUEDATE</th>
-				<th>BOTON</th>
+				<th>TIMES</th>
+				<th>ACTION</th>
 			</thead>
-			<tr ng-repeat="request in requests">
-				<td>{{request.alias}}</td>
-				<td>{{request.source}}</td>
-				<td>{{request.destination}}</td>
-				<td>{{request.subject}}</td>
-				<td>{{request.reward}}</td>
-				<td>{{request.duedate}}</td>
-				<td><a id="createOrder" class="btn btn-lg btn-primary" ng-href=''>I'll Do it !</td>
+			<tr ng-repeat='request in requests'>
+				<form ng-controller='requestsCtrl' ng-submit='createOrder()'>
+					<input type='hidden' name='request_id' ng-model='order.request_id'  value='{{request.id}}'/>
+					<input type='hidden' name='user_id'    ng-model='order.user_id'     value='{{request.user_id}}'/>
+					<td>{{request.alias}}</td>
+					<td>{{request.source}}</td>
+					<td>{{request.destination}}</td>
+					<td>{{request.subject}}</td>
+					<td>{{request.reward}}</td>
+					<td>{{request.duedate}}</td>
+					<td><span class="badge">{{request.times}}</span></td>
+					<td><button class='btn btn-lg btn-primary btn-block' type='submit'>I'll doo it!</button></td>
+				</form>
 			</tr>
 		</table>
 	</div>
