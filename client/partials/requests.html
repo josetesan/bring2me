@@ -1,31 +1,14 @@
-<div class='pull-left span6'>
-	<h3>Displaying {{requests.length}} Requests</h3>
-	<div class='table-responsive'>
-		<table class='table table-hover'>
-			<thead>
-				<th>ALIAS</th>
-				<th>SOURCE</th>
-				<th>DESTINATION</th>
-				<th>SUBJECT</th>
-				<th>REWARD</th>
-				<th>DUEDATE</th>
-				<th>TIMES</th>
-				<th>ACTION</th>
-			</thead>
-			<tr ng-repeat='request in requests'>
-				<form ng-controller='requestsCtrl' ng-submit='createOrder()'>
-					<input type='hidden' name='request_id' ng-model='order.request_id'  value='{{request.id}}'/>
-					<input type='hidden' name='user_id'    ng-model='order.user_id'     value='{{request.user_id}}'/>
-					<td>{{request.alias}}</td>
-					<td>{{request.source}}</td>
-					<td>{{request.destination}}</td>
-					<td>{{request.subject}}</td>
-					<td>{{request.reward}}</td>
-					<td>{{request.duedate}}</td>
-					<td><span class="badge">{{request.times}}</span></td>
-					<td><button class='btn btn-lg btn-primary btn-block' type='submit'>I'll doo it!</button></td>
-				</form>
-			</tr>
-		</table>
+<h3>Displaying {{requests.length}} Requests</h3>
+<div class="media" ng-repeat='request in requests' ng-controller="requestsCtrl">
+	<div class="pull-left">
+		{{request.alias|uppercase}}
+		<img class="media-object" src="" alt= "avatar de {{request.alias}}"/>
+	</div>
+	<div class="media-body">
+		<h4 class="media-heading">From {{request.source}} to {{request.destination}}</h4>
+		<p>{{request.subject}} for {{request.reward|currency}} no later than {{request.duedate | date:'dd/MM/yyyy'}}<br/>
+			<span class="badge">{{request.times}}</span> People already applied<br/>
+		    <button class='btn btn-primary' ng-click='createOrder(request.id,request.user_id)'>I'll doo it!</button>
+		</p>
 	</div>
 </div>

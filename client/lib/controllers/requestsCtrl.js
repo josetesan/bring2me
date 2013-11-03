@@ -2,12 +2,12 @@ function requestsCtrl($scope, $http, DBRequest) {
 
 	$scope.requests = DBRequest.query();
 
-	$scope.createOrder = function() {
-		
+	$scope.createOrder = function(request_id,user_id) {
+
 		$http({
 				method : 'POST',
 				url    : '/order',
-				data   : $scope.order
+				data   : request_id,user_id
 			})
 			.success(function(data, status, headers, config) {
 				alert('Order created ! ');
@@ -18,7 +18,7 @@ function requestsCtrl($scope, $http, DBRequest) {
 				// called asynchronously if an error occurs
 				// or server returns response with an error status.
 				alert('Error while creating an order ');
-		});
+			});
 
 	};
 
