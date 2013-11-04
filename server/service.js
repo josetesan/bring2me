@@ -1,21 +1,76 @@
 //var http = require('http');
 //var client = require("redis").createClient();
 var winston = require('winston');
-var petitions = require('./data/petitions.json');
-//var pg = require('pg');
-//var conString = "postgres://postgres:5432@localhost/bring2me";
-//var client = new pg.Client(conString);
+var conString = require('./config/postgres_pool.js');
+var pg = require('pg');
 var express = require('express');
 var app = express()
+  .use(express.compress())
   .use(express.urlencoded())
   .use(express.json())
-  .use(express.static('public'));
+  .use(express.static('../client'))
+  .use(express.favicon())
+  .use(express.cookieParser('md5sumofconcatenatedvalues'));
 
 
-app.get('/petitions', function  (request, response) {
-  response.json(petitions);
+app.get('/requests', function  (request, response) {
+  logger.info("Request received, answering with data");
+
+  pg.connect(conString,function(err,client,done) {
+    if (err) {
+      return console.error('could not connect ',err);
+    }
+    var query = client.query('SELECT R.ID,U.USER_ID,SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,ALIAS,TIMES FROM REQUESTS R, USERS U where R.ownerid = U.user_id');
+
+    query.on('row',function(row,result) {
+        console.log(row.alias+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
+        result.addRow(row);
+    });
+
+    query.on('error', function(error) {
+      console.log('Error on querying',error);
+    });
+
+    query.on('end',function(result) {
+        done();
+        console.log(result.rowCount + ' rows were received');
+        response.json(result.rows);
+    });
+
+  });
+
 });
 
+
+app.post('/users', function (request,response) {
+
+  logger.info("Receiving a post on users");
+
+  var name = request.body.email;
+  var password = request.body.password;
+
+  logger.info("Received "+name+" with password " + password);
+  
+
+});
+
+
+
+app.post('/order',function (request,response) {
+  
+  logger.info("An user has ordered a request");
+
+  var requestId = request.body.request_id;
+  var user_id = request.body.user_id;
+
+  logger.info(user_id +' has asked for '+request_id);
+
+  // check maximum requests are not reached
+
+  // update request counter
+
+  // insert new order
+});
 
 
 
