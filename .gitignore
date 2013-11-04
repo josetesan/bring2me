@@ -1,3 +1,4 @@
+.idea
 server/node_modules
 server/b2me_service.log
 server/b2me_exceptions.log
