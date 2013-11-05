@@ -2,12 +2,18 @@ function requestsCtrl($scope, $http, DBRequest) {
 
 	$scope.requests = DBRequest.query();
 
-	$scope.createOrder = function(request_id,user_id) {
+	$scope.createOrder = function(req_id,u_id) {
+
+
+		var order = {
+			request_id = req_id;
+			user_id = u_id;
+		};
 
 		$http({
 				method : 'POST',
 				url    : '/order',
-				data   : request_id,user_id
+				data   : order
 			})
 			.success(function(data, status, headers, config) {
 				alert('Order created ! ');

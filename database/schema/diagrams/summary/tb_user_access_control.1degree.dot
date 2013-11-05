@@ -1,0 +1,36 @@
+// dot 2.34.0 on Linux 3.11.6-1-MANJARO
+// SchemaSpy rev 590
+digraph "tb_user_access_control" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "tb_user_access_control" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_user_access_control</TD></TR>
+      <TR><TD PORT="uac_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">uac_id</TD></TR>
+      <TR><TD PORT="uac_created" COLSPAN="3" ALIGN="LEFT">uac_created</TD></TR>
+      <TR><TD PORT="uac_user_id" COLSPAN="3" ALIGN="LEFT">uac_user_id</TD></TR>
+      <TR><TD PORT="uac_user_pwd" COLSPAN="3" ALIGN="LEFT">uac_user_pwd</TD></TR>
+      <TR><TD PORT="uac_attribute01" COLSPAN="3" ALIGN="LEFT">uac_attribute01</TD></TR>
+      <TR><TD PORT="uac_attribute02" COLSPAN="3" ALIGN="LEFT">uac_attribute02</TD></TR>
+      <TR><TD PORT="uac_atrribute03" COLSPAN="3" ALIGN="LEFT">uac_atrribute03</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/tb_user_access_control.html"
+    tooltip="tb_user_access_control"
+  ];
+}

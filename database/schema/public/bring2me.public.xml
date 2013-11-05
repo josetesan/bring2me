@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="bring2me" schema="public" type="PostgreSQL - 9.3.1">
+   <tables>
+      <table name="orders" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="order_id" nullable="false" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="1" name="accepted_date" nullable="false" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="2" name="rejected_date" nullable="true" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="3" name="request_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fkc3df62e5f86f92e0" implied="false" onDeleteCascade="false" table="requests"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="user_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="user_id" foreignKey="fkc3df62e5a711814" implied="false" onDeleteCascade="false" table="users"/>
+         </column>
+         <primaryKey column="order_id" sequenceNumberInPK="1"/>
+         <index name="orders_pkey" unique="true">
+            <column ascending="true" name="order_id"/>
+         </index>
+      </table>
+      <table name="requests" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8">
+            <child column="request_id" foreignKey="fkc3df62e5f86f92e0" implied="false" onDeleteCascade="false" table="orders"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="destination" nullable="true" remarks="" size="32" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="duedate" nullable="true" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="3" name="reward" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="source" nullable="true" remarks="" size="32" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="subject" nullable="true" remarks="" size="32" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="times" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="7" name="ownerid" nullable="true" remarks="" size="19" type="int8">
+            <parent column="user_id" foreignKey="fke88f5fc4d4584913" implied="false" onDeleteCascade="false" table="users"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="requests_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="users" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="user_id" nullable="false" remarks="" size="19" type="int8">
+            <child column="user_id" foreignKey="fkc3df62e5a711814" implied="false" onDeleteCascade="false" table="orders"/>
+            <child column="ownerid" foreignKey="fke88f5fc4d4584913" implied="false" onDeleteCascade="false" table="requests"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="alias" nullable="false" remarks="" size="32" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="email" nullable="false" remarks="" size="128" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="homecity" nullable="false" remarks="" size="64" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="password" nullable="false" remarks="" size="64" type="varchar"/>
+         <primaryKey column="user_id" sequenceNumberInPK="1"/>
+         <index name="users_pkey" unique="true">
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+   </tables>
+</database>

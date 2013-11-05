@@ -1,0 +1,11 @@
+tb_user_access_control
+tb_user
+tb_service_type
+tb_request_to_proceed
+tb_request_master
+tb_request_action
+tb_rating
+tb_payment_type
+tb_currency
+tb_county_iso
+tb_city_country

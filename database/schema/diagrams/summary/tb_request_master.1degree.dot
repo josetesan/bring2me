@@ -1,0 +1,48 @@
+// dot 2.34.0 on Linux 3.11.6-1-MANJARO
+// SchemaSpy rev 590
+digraph "tb_request_master" {
+  graph [
+    rankdir="RL"
+    bgcolor="#f7f7f7"
+    nodesep="0.18"
+    ranksep="0.46"
+    fontname="Helvetica"
+    fontsize="11"
+  ];
+  node [
+    fontname="Helvetica"
+    fontsize="11"
+    shape="plaintext"
+  ];
+  edge [
+    arrowsize="0.8"
+  ];
+  "tb_request_master" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_request_master</TD></TR>
+      <TR><TD PORT="rm_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">rm_id</TD></TR>
+      <TR><TD PORT="rm_created" COLSPAN="3" ALIGN="LEFT">rm_created</TD></TR>
+      <TR><TD PORT="rm_created_by_user_id" COLSPAN="3" ALIGN="LEFT">rm_created_by_user_id</TD></TR>
+      <TR><TD PORT="rm_service_type_id" COLSPAN="3" ALIGN="LEFT">rm_service_type_id</TD></TR>
+      <TR><TD PORT="rm_from_iso_country_id" COLSPAN="3" ALIGN="LEFT">rm_from_iso_country_id</TD></TR>
+      <TR><TD PORT="rm_to_iso_country_id" COLSPAN="3" ALIGN="LEFT">rm_to_iso_country_id</TD></TR>
+      <TR><TD PORT="rm_from_location" COLSPAN="3" ALIGN="LEFT">rm_from_location</TD></TR>
+      <TR><TD PORT="rm_to_location" COLSPAN="3" ALIGN="LEFT">rm_to_location</TD></TR>
+      <TR><TD PORT="rm_pick_up_address" COLSPAN="3" ALIGN="LEFT">rm_pick_up_address</TD></TR>
+      <TR><TD PORT="rm_deliver_address" COLSPAN="3" ALIGN="LEFT">rm_deliver_address</TD></TR>
+      <TR><TD PORT="rm_weight_package" COLSPAN="3" ALIGN="LEFT">rm_weight_package</TD></TR>
+      <TR><TD PORT="rm_description_package" COLSPAN="3" ALIGN="LEFT">rm_description_package</TD></TR>
+      <TR><TD PORT="rm_requester_duration_minutes" COLSPAN="3" ALIGN="LEFT">rm_requester_duration_minutes</TD></TR>
+      <TR><TD PORT="rm_payment_money" COLSPAN="3" ALIGN="LEFT">rm_payment_money</TD></TR>
+      <TR><TD PORT="rm_currency_id" COLSPAN="3" ALIGN="LEFT">rm_currency_id</TD></TR>
+      <TR><TD PORT="rm_comments" COLSPAN="3" ALIGN="LEFT">rm_comments</TD></TR>
+      <TR><TD PORT="rm_attribute01" COLSPAN="3" ALIGN="LEFT">rm_attribute01</TD></TR>
+      <TR><TD PORT="rm_attribute02" COLSPAN="3" ALIGN="LEFT">rm_attribute02</TD></TR>
+      <TR><TD PORT="rm_attribute03" COLSPAN="3" ALIGN="LEFT">rm_attribute03</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/tb_request_master.html"
+    tooltip="tb_request_master"
+  ];
+}
