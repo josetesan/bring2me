@@ -1,0 +1,34 @@
+﻿SELECT 
+  tb_request_action.ra_created, 
+  tb_request_master.rm_created, 
+  tb_request_to_proceed.rtp_created, 
+  tb_rating.r_rating_given, 
+  tb_county_iso.ci_iso_country_name, 
+  tb_user.u_nickname, 
+  tb_user_access_control.uac_created
+FROM 
+  bring2me.tb_city_country, 
+  bring2me.tb_county_iso, 
+  bring2me.tb_currency, 
+  bring2me.tb_user, 
+  bring2me.tb_user_access_control, 
+  bring2me.tb_request_to_proceed, 
+  bring2me.tb_request_master, 
+  bring2me.tb_request_action, 
+  bring2me.tb_user, 
+  bring2me.tb_city_country, 
+  bring2me.tb_service_type, 
+  bring2me.tb_rating
+WHERE 
+  tb_city_country.cc_country_id = tb_county_iso.ci_id AND
+  tb_user_access_control.uac_user_id = tb_user.u_id AND
+  tb_request_to_proceed.rtp_request_action_id = tb_request_action.ra_id AND
+  tb_request_to_proceed.rtp_user_to_do_service_id = tb_user.u_id AND
+  tb_request_master.rm_id = tb_request_action.ra_request_master_id AND
+  tb_request_master.rm_service_type_id = tb_service_type.st_id AND
+  tb_request_master.rm_from_iso_country_id = tb_county_iso.ci_id AND
+  tb_request_master.rm_to_iso_country_id = tb_county_iso.ci_id AND
+  tb_request_action.ra_claim_given_by_user_id = tb_user.u_id AND
+  tb_user.u_country_id = tb_county_iso.ci_id AND
+  tb_rating.r_given_by_user_id = tb_user.u_id AND
+  tb_rating.r_given_to_user_id = tb_user.u_id;
