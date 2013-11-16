@@ -1,16 +1,3 @@
-1 wants to get a RELOJ from MADRID to BARCELONA for 15€
-2 wants to get a RELOJ from TOLEDO to BARCELONA for 35€
-3 wants to get a RELOJ from MALAGA to BARCELONA for 45€
-4 wants to get a RELOJ from CADIZ to BARCELONA for 135€
-5 wants to get a RELOJ from BARCELONA to CADIZ for 12€
-6 wants to get a RELOJ from MADRID to TOLEDO for 11€
-2 wants to get a RELOJ from BARCELONA to MALAGA for 19€
-3 wants to get a RELOJ from MADRID to MALAGA for 215€
-9 wants to get a RELOJ from BARCELONA to CADIZ for 87€
-9 wants to get a RELOJ from MADRID to MALAGA for 92€
-1 wants to get a RELOJ from MADRID to CADIZ for 31€
-2 wants to get a RELOJ from TOLEDO to MALAGA for 8€
-12 rows were received
 [
 	{
 		"source": "MADRID                          ",

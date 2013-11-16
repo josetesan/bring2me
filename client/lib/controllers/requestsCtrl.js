@@ -5,10 +5,10 @@ function requestsCtrl($scope, $http, DBRequest) {
 	$scope.createOrder = function(req_id,u_id) {
 
 
-		var order = {
-			request_id = req_id;
-			user_id = u_id;
-		};
+		// var order = {
+		// 	request_id = req_id;
+		// 	user_id = u_id;
+		// };
 
 		$http({
 				method : 'POST',

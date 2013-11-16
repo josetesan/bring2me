@@ -1,4 +1,4 @@
-angular.module('bring2me', ['requestsService'])
+angular.module('bring2me', ['ngRoute','requestsService'])
 	.config(appRouter);
 
 function appRouter ($routeProvider) {

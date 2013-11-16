@@ -18,22 +18,22 @@ app.get('/requests', function  (request, response) {
 
   pg.connect(conString,function(err,client,done) {
     if (err) {
-      return console.error('could not connect ',err);
+      return logger.error('could not connect ',err);
     }
     var query = client.query('SELECT R.ID,U.USER_ID,SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,ALIAS,TIMES FROM REQUESTS R, USERS U where R.ownerid = U.user_id');
 
     query.on('row',function(row,result) {
-        console.log(row.alias+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
+        logger.info(row.alias+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
         result.addRow(row);
     });
 
     query.on('error', function(error) {
-      console.log('Error on querying',error);
+      logger.error('Error on querying',error);
     });
 
     query.on('end',function(result) {
         done();
-        console.log(result.rowCount + ' rows were received');
+        logger.info(result.rowCount + ' rows were received');
         response.json(result.rows);
     });
 
