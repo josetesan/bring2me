@@ -60,16 +60,35 @@ app.post('/order',function (request,response) {
   
   logger.info("An user has ordered a request");
 
-  var requestId = request.body.request_id;
+  var request_id = request.body.request_id;
   var user_id = request.body.user_id;
 
   logger.info(user_id +' has asked for '+request_id);
 
-  // check maximum requests are not reached
+  pg.connect(conString,function(err,client,done) {
+    if (err) {
+      return logger.error('could not connect ',err);
+    }
 
-  // update request counter
+    // check maximum requests are not reached
 
-  // insert new order
+    // update request counter
+
+    // insert new order
+    var query = client.query('INSERT INTO ORDERS (ORDER_ID,ACCEPTED_DATE, REQUEST_ID, USER_ID) VALUES ($1,$2,$3,$4)',[2,new Date(),request_id, user_id]);
+
+    query.on('error', function(error) {
+      logger.error('Error on creating order :',error);
+    });
+
+    query.on('end',function(result) {
+        done();
+        logger.info("Order created with id "+result.oid);
+        // return order id
+        response.json(result.oid);
+    });
+  });
+  
 });
 
 

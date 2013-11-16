@@ -4,11 +4,11 @@ function requestsCtrl($scope, $http, DBRequest) {
 
 	$scope.createOrder = function(req_id,u_id) {
 
+		var order = {
+		        request_id: req_id,
+		        user_id: u_id,
+		};
 
-		// var order = {
-		// 	request_id = req_id;
-		// 	user_id = u_id;
-		// };
 
 		$http({
 				method : 'POST',
@@ -19,6 +19,7 @@ function requestsCtrl($scope, $http, DBRequest) {
 				alert('Order created ! ');
 				// this callback will be called asynchronously
 				// when the response is available
+				$scope.request.times++;
 			})
 			.error(function(data, status, headers, config) {
 				// called asynchronously if an error occurs
