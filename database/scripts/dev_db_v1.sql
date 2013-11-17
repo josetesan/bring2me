@@ -318,7 +318,10 @@ request_to_iso_country_id INT not null REFERENCES dev.tb_country_iso (country_id
 request_from_city_location varchar(100),
 request_to_city_location varchar(100),
 request_pick_up_address varchar(300),
+request_pick_up_address_url varchar(500),
+request_pick_up_time varchar(100),
 request_deliver_address varchar(300),
+request_deliver_address_url varchar(500),
 request_weight_package varchar(100),
 request_description_package varchar(1000),
 request_duration_minutes INT not null,
@@ -329,7 +332,6 @@ attribute01 varchar(10),
 attribute02 varchar(10),
 attribute03 varchar(10)
 );
-
 
 
 CREATE OR REPLACE FUNCTION dev.prd_tg_tb_request_master() RETURNS TRIGGER AS 
