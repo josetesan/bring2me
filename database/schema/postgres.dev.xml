@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="postgres" schema="dev" type="PostgreSQL - 9.3.1">
+   <tables>
+      <table name="tb_country_iso" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="country_id" nullable="false" remarks="" size="10" type="int4">
+            <child column="request_from_iso_country_id" foreignKey="tb_request_master_request_from_iso_country_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_master"/>
+            <child column="request_to_iso_country_id" foreignKey="tb_request_master_request_to_iso_country_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_master"/>
+            <child column="user_country_id" foreignKey="tb_user_user_country_id_fkey" implied="false" onDeleteCascade="false" table="tb_user"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="country_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="country_iso_country_short" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="country_iso_country_name" nullable="true" remarks="" size="300" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="attribute01" nullable="true" remarks="" size="30" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="attribute02" nullable="true" remarks="" size="30" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="attribute03" nullable="true" remarks="" size="30" type="varchar"/>
+         <primaryKey column="country_id" sequenceNumberInPK="1"/>
+         <index name="tb_country_iso_pkey" unique="true">
+            <column ascending="true" name="country_id"/>
+         </index>
+      </table>
+      <table name="tb_currency" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="currency_id" nullable="false" remarks="" size="10" type="int4">
+            <child column="request_currency_id" foreignKey="tb_request_master_request_currency_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_master"/>
+            <child column="proceed_payment_currency_id" foreignKey="tb_request_to_proceed_proceed_payment_currency_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_to_proceed"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="currency_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="currency_currency_iso_name" nullable="true" remarks="" size="100" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="currency_currency_fee" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="4" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="artribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="currency_id" sequenceNumberInPK="1"/>
+         <index name="tb_currency_pkey" unique="true">
+            <column ascending="true" name="currency_id"/>
+         </index>
+      </table>
+      <table name="tb_payment_type" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="payment_id" nullable="false" remarks="" size="10" type="int4">
+            <child column="proceed_payment_type_id" foreignKey="tb_request_to_proceed_proceed_payment_type_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_to_proceed"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="payment_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="payment_name" nullable="true" remarks="" size="50" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="payment_description" nullable="true" remarks="" size="200" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="payment_active" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="attribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="payment_id" sequenceNumberInPK="1"/>
+         <index name="tb_payment_type_pkey" unique="true">
+            <column ascending="true" name="payment_id"/>
+         </index>
+      </table>
+      <table name="tb_rating" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="rating_id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="1" name="rating_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="rating_given_by_user_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="tb_rating_rating_given_by_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_user"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="rating_given_to_user_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="tb_rating_rating_given_to_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_user"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="rating_rating_given" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="5" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="attribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="atrribure03" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="rating_id" sequenceNumberInPK="1"/>
+         <index name="tb_rating_pkey" unique="true">
+            <column ascending="true" name="rating_id"/>
+         </index>
+      </table>
+      <table name="tb_request_action" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="action_id" nullable="false" remarks="" size="10" type="int4">
+            <child column="proceed_request_action_id" foreignKey="tb_request_to_proceed_proceed_request_action_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_to_proceed"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="action_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="action_request_master_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="request_id" foreignKey="tb_request_action_action_request_master_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_master"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="action_claim_given_by_user_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="tb_request_action_action_claim_given_by_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_user"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="attribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="action_id" sequenceNumberInPK="1"/>
+         <index name="tb_request_action_pkey" unique="true">
+            <column ascending="true" name="action_id"/>
+         </index>
+      </table>
+      <table name="tb_request_master" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="request_id" nullable="false" remarks="" size="10" type="int4">
+            <child column="action_request_master_id" foreignKey="tb_request_action_action_request_master_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_action"/>
+            <child column="proceed_user_to_do_service_id" foreignKey="tb_request_to_proceed_proceed_user_to_do_service_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_to_proceed"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="request_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="2" name="request_updated" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="request_created_by_user_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="tb_request_master_request_created_by_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_user"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="request_service_type_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="service_id" foreignKey="tb_request_master_request_service_type_id_fkey" implied="false" onDeleteCascade="false" table="tb_service_type"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="request_from_iso_country_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="country_id" foreignKey="tb_request_master_request_from_iso_country_id_fkey" implied="false" onDeleteCascade="false" table="tb_country_iso"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="request_to_iso_country_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="country_id" foreignKey="tb_request_master_request_to_iso_country_id_fkey" implied="false" onDeleteCascade="false" table="tb_country_iso"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="7" name="request_from_city_location" nullable="true" remarks="" size="100" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="request_to_city_location" nullable="true" remarks="" size="100" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="request_pick_up_address" nullable="true" remarks="" size="300" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="request_pick_up_address_url" nullable="true" remarks="" size="500" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="11" name="request_pick_up_time" nullable="true" remarks="" size="100" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="12" name="request_deliver_address" nullable="true" remarks="" size="300" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="13" name="request_deliver_address_url" nullable="true" remarks="" size="500" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="14" name="request_weight_package" nullable="true" remarks="" size="100" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="15" name="request_description_package" nullable="true" remarks="" size="1000" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="16" name="request_duration_minutes" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="17" name="request_payment_money" nullable="false" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="18" name="request_currency_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="currency_id" foreignKey="tb_request_master_request_currency_id_fkey" implied="false" onDeleteCascade="false" table="tb_currency"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="19" name="request_comments" nullable="true" remarks="" size="1000" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="20" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="21" name="attribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="22" name="attribute03" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="request_id" sequenceNumberInPK="1"/>
+         <index name="tb_request_master_pkey" unique="true">
+            <column ascending="true" name="request_id"/>
+         </index>
+      </table>
+      <table name="tb_request_to_proceed" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="proceed_id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="1" name="proceed_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="proceed_request_action_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="action_id" foreignKey="tb_request_to_proceed_proceed_request_action_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_action"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="proceed_user_to_do_service_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="request_id" foreignKey="tb_request_to_proceed_proceed_user_to_do_service_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_master"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="proceed_payment_currency_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="currency_id" foreignKey="tb_request_to_proceed_proceed_payment_currency_id_fkey" implied="false" onDeleteCascade="false" table="tb_currency"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="proceed_payment_type_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="payment_id" foreignKey="tb_request_to_proceed_proceed_payment_type_id_fkey" implied="false" onDeleteCascade="false" table="tb_payment_type"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="proceed_payment_external_id" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="7" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="attribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="attribute03" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="proceed_id" sequenceNumberInPK="1"/>
+         <index name="tb_request_to_proceed_pkey" unique="true">
+            <column ascending="true" name="proceed_id"/>
+         </index>
+      </table>
+      <table name="tb_service_type" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="service_id" nullable="false" remarks="" size="10" type="int4">
+            <child column="request_service_type_id" foreignKey="tb_request_master_request_service_type_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_master"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="service_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="service_name" nullable="true" remarks="" size="100" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="service_description" nullable="true" remarks="" size="1000" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="service_picture" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="service_active" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="service_service_fee" nullable="true" remarks="" size="131089" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="7" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="attribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="attribute03" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="service_id" sequenceNumberInPK="1"/>
+         <index name="tb_service_type_pkey" unique="true">
+            <column ascending="true" name="service_id"/>
+         </index>
+      </table>
+      <table name="tb_user" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="user_id" nullable="false" remarks="" size="10" type="int4">
+            <child column="rating_given_by_user_id" foreignKey="tb_rating_rating_given_by_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_rating"/>
+            <child column="rating_given_to_user_id" foreignKey="tb_rating_rating_given_to_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_rating"/>
+            <child column="action_claim_given_by_user_id" foreignKey="tb_request_action_action_claim_given_by_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_action"/>
+            <child column="request_created_by_user_id" foreignKey="tb_request_master_request_created_by_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_request_master"/>
+            <child column="user_id" foreignKey="tb_user_access_control_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_user_access_control"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="1" name="user_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="user_email" nullable="false" remarks="" size="300" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="user_nickname" nullable="false" remarks="" size="100" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="user_country_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="country_id" foreignKey="tb_user_user_country_id_fkey" implied="false" onDeleteCascade="false" table="tb_country_iso"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="user_phone_or_mobile" nullable="true" remarks="" size="20" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="user_twitter_account" nullable="true" remarks="" size="150" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="attribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="attribute03" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="user_id" sequenceNumberInPK="1"/>
+         <index name="tb_user_pkey" unique="true">
+            <column ascending="true" name="user_id"/>
+         </index>
+         <index name="tb_user_user_email_key" unique="true">
+            <column ascending="true" name="user_email"/>
+         </index>
+         <index name="tb_user_user_nickname_key" unique="true">
+            <column ascending="true" name="user_nickname"/>
+         </index>
+      </table>
+      <table name="tb_user_access_control" numRows="0" remarks="" schema="dev" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="control_id" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="1" name="control_created" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="2" name="control_updated" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="user_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="user_id" foreignKey="tb_user_access_control_user_id_fkey" implied="false" onDeleteCascade="false" table="tb_user"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="user_passs_control_word" nullable="false" remarks="" size="100" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="attribute01" nullable="true" remarks="" size="10" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="attribute02" nullable="true" remarks="" size="10" type="varchar"/>
+         <primaryKey column="control_id" sequenceNumberInPK="1"/>
+         <index name="tb_user_access_control_pkey" unique="true">
+            <column ascending="true" name="control_id"/>
+         </index>
+      </table>
+   </tables>
+</database>

@@ -1,4 +1,4 @@
-// dot 2.34.0 on Linux 3.11.6-1-MANJARO
+// dot 2.34.0 on Linux 3.12.0-1-MANJARO
 // SchemaSpy rev 590
 digraph "compactRelationshipsDiagram" {
   graph [
@@ -19,4 +19,146 @@ digraph "compactRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
+  "tb_country_iso" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_country_iso</TD></TR>
+      <TR><TD PORT="country_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">country_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/tb_country_iso.html"
+    tooltip="tb_country_iso"
+  ];
+  "tb_currency" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_currency</TD></TR>
+      <TR><TD PORT="currency_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">currency_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/tb_currency.html"
+    tooltip="tb_currency"
+  ];
+  "tb_payment_type" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_payment_type</TD></TR>
+      <TR><TD PORT="payment_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">payment_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/tb_payment_type.html"
+    tooltip="tb_payment_type"
+  ];
+  "tb_rating" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_rating</TD></TR>
+      <TR><TD PORT="rating_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">rating_id</TD></TR>
+      <TR><TD PORT="rating_given_by_user_id" COLSPAN="3" ALIGN="LEFT">rating_given_by_user_id</TD></TR>
+      <TR><TD PORT="rating_given_to_user_id" COLSPAN="3" ALIGN="LEFT">rating_given_to_user_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/tb_rating.html"
+    tooltip="tb_rating"
+  ];
+  "tb_request_action" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_request_action</TD></TR>
+      <TR><TD PORT="action_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">action_id</TD></TR>
+      <TR><TD PORT="action_request_master_id" COLSPAN="3" ALIGN="LEFT">action_request_master_id</TD></TR>
+      <TR><TD PORT="action_claim_given_by_user_id" COLSPAN="3" ALIGN="LEFT">action_claim_given_by_user_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/tb_request_action.html"
+    tooltip="tb_request_action"
+  ];
+  "tb_request_master" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_request_master</TD></TR>
+      <TR><TD PORT="request_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">request_id</TD></TR>
+      <TR><TD PORT="request_created_by_user_id" COLSPAN="3" ALIGN="LEFT">request_created_by_user_id</TD></TR>
+      <TR><TD PORT="request_service_type_id" COLSPAN="3" ALIGN="LEFT">request_service_type_id</TD></TR>
+      <TR><TD PORT="request_from_iso_country_id" COLSPAN="3" ALIGN="LEFT">request_from_iso_country_id</TD></TR>
+      <TR><TD PORT="request_to_iso_country_id" COLSPAN="3" ALIGN="LEFT">request_to_iso_country_id</TD></TR>
+      <TR><TD PORT="request_currency_id" COLSPAN="3" ALIGN="LEFT">request_currency_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/tb_request_master.html"
+    tooltip="tb_request_master"
+  ];
+  "tb_request_to_proceed" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_request_to_proceed</TD></TR>
+      <TR><TD PORT="proceed_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">proceed_id</TD></TR>
+      <TR><TD PORT="proceed_request_action_id" COLSPAN="3" ALIGN="LEFT">proceed_request_action_id</TD></TR>
+      <TR><TD PORT="proceed_user_to_do_service_id" COLSPAN="3" ALIGN="LEFT">proceed_user_to_do_service_id</TD></TR>
+      <TR><TD PORT="proceed_payment_currency_id" COLSPAN="3" ALIGN="LEFT">proceed_payment_currency_id</TD></TR>
+      <TR><TD PORT="proceed_payment_type_id" COLSPAN="3" ALIGN="LEFT">proceed_payment_type_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/tb_request_to_proceed.html"
+    tooltip="tb_request_to_proceed"
+  ];
+  "tb_service_type" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_service_type</TD></TR>
+      <TR><TD PORT="service_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">service_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/tb_service_type.html"
+    tooltip="tb_service_type"
+  ];
+  "tb_user" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_user</TD></TR>
+      <TR><TD PORT="user_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">user_id</TD></TR>
+      <TR><TD PORT="user_email" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">user_email</TD></TR>
+      <TR><TD PORT="user_nickname" COLSPAN="3" BGCOLOR="#f4f7da" ALIGN="LEFT">user_nickname</TD></TR>
+      <TR><TD PORT="user_country_id" COLSPAN="3" ALIGN="LEFT">user_country_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+    </TABLE>>
+    URL="tables/tb_user.html"
+    tooltip="tb_user"
+  ];
+  "tb_user_access_control" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tb_user_access_control</TD></TR>
+      <TR><TD PORT="control_id" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">control_id</TD></TR>
+      <TR><TD PORT="user_id" COLSPAN="3" ALIGN="LEFT">user_id</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="tables/tb_user_access_control.html"
+    tooltip="tb_user_access_control"
+  ];
+  "tb_rating":"rating_given_by_user_id":w -> "tb_user":"user_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_rating":"rating_given_to_user_id":w -> "tb_user":"user_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_action":"action_claim_given_by_user_id":w -> "tb_user":"user_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_action":"action_request_master_id":w -> "tb_request_master":"request_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_master":"request_created_by_user_id":w -> "tb_user":"user_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_master":"request_currency_id":w -> "tb_currency":"currency_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_master":"request_from_iso_country_id":w -> "tb_country_iso":"country_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_master":"request_service_type_id":w -> "tb_service_type":"service_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_master":"request_to_iso_country_id":w -> "tb_country_iso":"country_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_to_proceed":"proceed_payment_currency_id":w -> "tb_currency":"currency_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_to_proceed":"proceed_payment_type_id":w -> "tb_payment_type":"payment_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_to_proceed":"proceed_request_action_id":w -> "tb_request_action":"action_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_request_to_proceed":"proceed_user_to_do_service_id":w -> "tb_request_master":"request_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_user":"user_country_id":w -> "tb_country_iso":"country_id":e [arrowhead=none dir=back arrowtail=crowodot];
+  "tb_user_access_control":"user_id":w -> "tb_user":"user_id":e [arrowhead=none dir=back arrowtail=crowodot];
 }
