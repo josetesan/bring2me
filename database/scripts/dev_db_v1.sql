@@ -15,22 +15,22 @@
 
 -- create db schema . For the time being, there is only one schema
 
-drop schema dev cascade; 
+--drop schema dev cascade; 
 
-CREATE SCHEMA dev;
+--CREATE SCHEMA dev;
 
 
 
-GRANT ALL ON SCHEMA dev TO public;
-COMMENT ON SCHEMA dev
-  IS 'standard development schema';
+--GRANT ALL ON SCHEMA dev TO public;
+--COMMENT ON SCHEMA dev
+--  IS 'standard development schema';
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- create sequence, only for users
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE SEQUENCE dev.sql_id_user
+CREATE SEQUENCE public.sql_id_user
    INCREMENT 1
    START 1
    MINVALUE 1
@@ -46,7 +46,7 @@ CREATE SEQUENCE dev.sql_id_user
 -- SALMON  (see db_schema document) -----------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE SEQUENCE dev.sql_id_administration
+CREATE SEQUENCE public.sql_id_administration
    INCREMENT 1
    START 1
    MINVALUE 1
@@ -55,7 +55,7 @@ CREATE SEQUENCE dev.sql_id_administration
 -- tb_country_iso
 --------------------------------------------------------------------------------------------   
 
-create table dev.tb_country_iso
+create table public.tb_country_iso
 (
 country_id INT PRIMARY KEY  NOT NULL,
 country_created timestamp,
@@ -67,7 +67,7 @@ attribute03 varchar(30)
 );
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tb_county_iso() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION public.prd_tb_county_iso() RETURNS TRIGGER AS
  $BODY$
     BEGIN
 	New.country_id = nextval('sql_id_administration');
@@ -79,14 +79,14 @@ LANGUAGE 'plpgsql' ;
 
 
 CREATE TRIGGER tg_tb_country_iso
-    BEFORE insert ON dev.tb_country_iso 
+    BEFORE insert ON public.tb_country_iso 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tb_county_iso();
+   EXECUTE PROCEDURE public.prd_tb_county_iso();
 
 -- tb_service_type
 --------------------------------------------------------------------------------------------   
 
-create table dev.tb_service_type (
+create table public.tb_service_type (
 service_id INT PRIMARY KEY  NOT NULL,
 service_created  timestamp  ,
 service_name varchar(100), 
@@ -100,7 +100,7 @@ attribute03 varchar(10)
 );
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tb_service_type() RETURNS TRIGGER AS 
+CREATE OR REPLACE FUNCTION public.prd_tb_service_type() RETURNS TRIGGER AS 
  $BODY$
     BEGIN
 	New.service_id = nextval('sql_id_administration');
@@ -112,15 +112,15 @@ LANGUAGE 'plpgsql' ;
 
 
 CREATE TRIGGER tg_tb_service_type
-    BEFORE insert ON dev.tb_service_type 
+    BEFORE insert ON public.tb_service_type 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tb_service_type();
+   EXECUTE PROCEDURE public.prd_tb_service_type();
 
 
 -- tb_currency
 --------------------------------------------------------------------------------------------   
 
-create table dev.tb_currency(
+create table public.tb_currency(
 currency_id  INT PRIMARY KEY  NOT NULL,
 currency_created timestamp  ,
 currency_currency_iso_name varchar(100), 
@@ -132,7 +132,7 @@ artribute02 varchar(10)
 
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tb_currency() RETURNS TRIGGER AS 
+CREATE OR REPLACE FUNCTION public.prd_tb_currency() RETURNS TRIGGER AS 
  $BODY$
     BEGIN
 	New.currency_id = nextval('sql_id_administration');
@@ -144,15 +144,15 @@ LANGUAGE 'plpgsql' ;
 
 
 CREATE TRIGGER tg_tb_currency
-    BEFORE insert ON dev.tb_currency 
+    BEFORE insert ON public.tb_currency 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tb_currency();
+   EXECUTE PROCEDURE public.prd_tb_currency();
 
 
 
 -- tb_payment_type
 --------------------------------------------------------------------------------------------   
-create table dev.tb_payment_type (
+create table public.tb_payment_type (
 payment_id   INT PRIMARY KEY  NOT NULL,
 payment_created timestamp ,
 payment_name varchar(50),
@@ -164,7 +164,7 @@ attribute02  varchar(10)
 
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tb_payment_type() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION public.prd_tb_payment_type() RETURNS TRIGGER AS
 
  $BODY$
     BEGIN
@@ -178,9 +178,9 @@ LANGUAGE 'plpgsql' ;
 
 
 CREATE TRIGGER tg_tb_payment_type
-    BEFORE insert ON dev.tb_payment_type 
+    BEFORE insert ON public.tb_payment_type 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tb_payment_type();
+   EXECUTE PROCEDURE public.prd_tb_payment_type();
 
 
   
@@ -192,12 +192,12 @@ CREATE TRIGGER tg_tb_payment_type
 -- create tables -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-create table dev.tb_user(
+create table public.tb_user(
 user_id INT PRIMARY KEY   NOT NULL,
 user_created timestamp  ,
 user_email varchar(300) not null UNIQUE,
 user_nickname varchar(100) not null UNIQUE,
-user_country_id int REFERENCES dev.tb_country_iso (country_id),
+user_country_id int REFERENCES public.tb_country_iso (country_id),
 user_phone_or_mobile varchar(20),
 user_twitter_account varchar(150),
 attribute01 varchar(10), 
@@ -206,7 +206,7 @@ attribute03 varchar(10)
 );
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tb_user() RETURNS TRIGGER AS 
+CREATE OR REPLACE FUNCTION public.prd_tb_user() RETURNS TRIGGER AS 
 $BODY$
     BEGIN
 	New.user_id = nextval('sql_id_user');
@@ -217,23 +217,23 @@ $BODY$
 LANGUAGE 'plpgsql';
 
 CREATE TRIGGER tg_tb_user 
-    BEFORE insert ON dev.tb_user 
+    BEFORE insert ON public.tb_user 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tb_user();
+   EXECUTE PROCEDURE public.prd_tb_user();
 
 
-CREATE TABLE dev.tb_user_access_control (
+CREATE TABLE public.tb_user_access_control (
 control_id INT PRIMARY KEY   NOT NULL,
 control_created timestamp  ,
 control_updated timestamp, 
-user_id INT not null REFERENCES dev.tb_user(user_id), 
+user_id INT not null REFERENCES public.tb_user(user_id), 
 user_passs_control_word varchar(100)  not null,  -- hash and salted http://www.postgresql.org/docs/8.3/static/pgcrypto.html 
 attribute01 varchar(10), 
 attribute02 varchar(10)
 );
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tg_user_access_control() RETURNS TRIGGER AS 
+CREATE OR REPLACE FUNCTION public.prd_tg_user_access_control() RETURNS TRIGGER AS 
  $BODY$
     BEGIN
 	
@@ -253,18 +253,18 @@ CREATE OR REPLACE FUNCTION dev.prd_tg_user_access_control() RETURNS TRIGGER AS
  LANGUAGE 'plpgsql';
 
 CREATE TRIGGER tg_tb_user_access_control 
-    BEFORE insert or update ON dev.tb_user_access_control 
+    BEFORE insert or update ON public.tb_user_access_control 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tg_user_access_control();
+   EXECUTE PROCEDURE public.prd_tg_user_access_control();
   
   
 
-create table dev.tb_rating
+create table public.tb_rating
 (
 rating_id INT PRIMARY KEY   NOT NULL,
 rating_created timestamp  , 
-rating_given_by_user_id  INT not null REFERENCES dev.tb_user( user_id), 
-rating_given_to_user_id int  not null REFERENCES dev.tb_user(user_id), 
+rating_given_by_user_id  INT not null REFERENCES public.tb_user( user_id), 
+rating_given_to_user_id int  not null REFERENCES public.tb_user(user_id), 
 rating_rating_given int not null, 
 attribute01   varchar(10), 
 attribute02   varchar(10), 
@@ -274,7 +274,7 @@ atrribure03   varchar(10)
 );
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tb_rating() RETURNS TRIGGER AS 
+CREATE OR REPLACE FUNCTION public.prd_tb_rating() RETURNS TRIGGER AS 
  $BODY$
     BEGIN
 	New.rating_id = nextval('sql_id_user');
@@ -285,9 +285,9 @@ CREATE OR REPLACE FUNCTION dev.prd_tb_rating() RETURNS TRIGGER AS
  LANGUAGE 'plpgsql';
 
 CREATE TRIGGER tg_tb_rating 
-    BEFORE insert ON dev.tb_rating 
+    BEFORE insert ON public.tb_rating 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tb_rating();
+   EXECUTE PROCEDURE public.prd_tb_rating();
   
   
 
@@ -297,7 +297,7 @@ CREATE TRIGGER tg_tb_rating
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-CREATE SEQUENCE dev.sql_id_activity
+CREATE SEQUENCE public.sql_id_activity
    INCREMENT 1
    START 1
    MINVALUE 1
@@ -307,14 +307,14 @@ CREATE SEQUENCE dev.sql_id_activity
 --------------------------------------------------------------------------------------------   
 
 
-create table dev.tb_request_master (
+create table public.tb_request_master (
 request_id INT PRIMARY KEY   NOT NULL,
 request_created timestamp ,
 request_updated timestamp,
-request_created_by_user_id INT not null REFERENCES dev.tb_user (user_id),
-request_service_type_id INT not null REFERENCES dev.tb_service_type (service_id) ,
-request_from_iso_country_id INT not null REFERENCES dev.tb_country_iso (country_id),
-request_to_iso_country_id INT not null REFERENCES dev.tb_country_iso (country_id),
+request_created_by_user_id INT not null REFERENCES public.tb_user (user_id),
+request_service_type_id INT not null REFERENCES public.tb_service_type (service_id) ,
+request_from_iso_country_id INT not null REFERENCES public.tb_country_iso (country_id),
+request_to_iso_country_id INT not null REFERENCES public.tb_country_iso (country_id),
 request_from_city_location varchar(100),
 request_to_city_location varchar(100),
 request_pick_up_address varchar(300),
@@ -326,7 +326,7 @@ request_weight_package varchar(100),
 request_description_package varchar(1000),
 request_duration_minutes INT not null,
 request_payment_money decimal not null,
-request_currency_id INT not null REFERENCES dev.tb_currency (currency_id),
+request_currency_id INT not null REFERENCES public.tb_currency (currency_id),
 request_comments varchar(1000), 
 attribute01 varchar(10),
 attribute02 varchar(10),
@@ -334,7 +334,7 @@ attribute03 varchar(10)
 );
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tg_tb_request_master() RETURNS TRIGGER AS 
+CREATE OR REPLACE FUNCTION public.prd_tg_tb_request_master() RETURNS TRIGGER AS 
 $BODY$
     BEGIN
 	
@@ -357,25 +357,25 @@ LANGUAGE 'plpgsql';
 
 
 CREATE TRIGGER tg_tb_request_master 
-    BEFORE insert or UPDATE ON dev.tb_request_master 
+    BEFORE insert or UPDATE ON public.tb_request_master 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tg_tb_request_master();
+   EXECUTE PROCEDURE public.prd_tg_tb_request_master();
 
 
 -- tb_request_action
 --------------------------------------------------------------------------------------------   
 
 
-create table dev.tb_request_action (
+create table public.tb_request_action (
 action_id INT PRIMARY KEY  NOT NULL,
 action_created timestamp ,
-action_request_master_id INT not null REFERENCES dev.tb_request_master(request_id),
-action_claim_given_by_user_id INT not null REFERENCES dev.tb_user(user_id),
+action_request_master_id INT not null REFERENCES public.tb_request_master(request_id),
+action_claim_given_by_user_id INT not null REFERENCES public.tb_user(user_id),
 attribute01 varchar(10),
 attribute02 varchar(10)
 );
 
-CREATE OR REPLACE FUNCTION dev.prd_tb_request_action() RETURNS TRIGGER AS $BODY$
+CREATE OR REPLACE FUNCTION public.prd_tb_request_action() RETURNS TRIGGER AS $BODY$
     BEGIN
 	New.action_id = nextval('sql_id_activity');
 	New.action_created = now();
@@ -386,22 +386,22 @@ LANGUAGE 'plpgsql' ;
 
 
 CREATE TRIGGER tg_tb_request_action 
-    BEFORE UPDATE ON dev.tb_request_action 
+    BEFORE UPDATE ON public.tb_request_action 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tb_request_action();
+   EXECUTE PROCEDURE public.prd_tb_request_action();
 
 
 -- tb_request_to_proceed
 --------------------------------------------------------------------------------------------   
 
-create table dev.tb_request_to_proceed
+create table public.tb_request_to_proceed
 (
 proceed_id INT PRIMARY KEY  NOT NULL,
 proceed_created timestamp, 
-proceed_request_action_id INT REFERENCES dev.tb_request_action (action_id),
-proceed_user_to_do_service_id INT REFERENCES  dev.tb_request_master(request_id), 
-proceed_payment_currency_id INT REFERENCES dev.tb_currency (currency_id),
-proceed_payment_type_id INT REFERENCES dev.tb_payment_type (payment_id),
+proceed_request_action_id INT REFERENCES public.tb_request_action (action_id),
+proceed_user_to_do_service_id INT REFERENCES  public.tb_request_master(request_id), 
+proceed_payment_currency_id INT REFERENCES public.tb_currency (currency_id),
+proceed_payment_type_id INT REFERENCES public.tb_payment_type (payment_id),
 proceed_payment_external_id int, -- id from the bank or from paypal or any other source
 attribute01 varchar(10),
 attribute02 varchar(10),
@@ -411,7 +411,7 @@ attribute03 varchar(10)
 
 
 
-CREATE OR REPLACE FUNCTION dev.prd_tb_request_to_proceed() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION public.prd_tb_request_to_proceed() RETURNS TRIGGER AS
 $BODY$
     BEGIN
 	New.proceed_id = nextval('sql_id_activity');
@@ -423,14 +423,14 @@ $BODY$
 
 
 CREATE TRIGGER tg_tb_request_to_proceed 
-    BEFORE insert ON dev.tb_request_to_proceed 
+    BEFORE insert ON public.tb_request_to_proceed 
     FOR EACH ROW
-   EXECUTE PROCEDURE dev.prd_tb_request_to_proceed();
+   EXECUTE PROCEDURE public.prd_tb_request_to_proceed();
 
 
 
 
-SET dev.TIMEZONE = 'UTC';
+SET public.TIMEZONE = 'UTC';
 
 
 --------------------------------------------------------------------------------------

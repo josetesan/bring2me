@@ -1,14 +1,12 @@
 var pg = require('pg');
-var conString = "postgres://postgres:5432@localhost/bring2me";
+var conString = "postgres://postgres:5432@localhost/postgres";
 
 pg.connect(conString,function(err,client,done) {
 	if (err) {
 		return console.error('could not connect ',err);
 	}
 	//var query = client.query('SELECT SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,OWNERID FROM REQUESTS');
-        var query = client.query('SELECT ACCEPTED_DATE,SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE, ALIAS, EMAIL '+
-                 ' FROM REQUESTS R left join USERS U on (R.ownerid = U.user_id) ' +
-                 ' left join ORDERS O on (O.request_id = R.id)');
+	var query = client.query('SELECT * from tb_currency');
 
 
 	query.on('row',function(row,result) {
@@ -19,7 +17,8 @@ pg.connect(conString,function(err,client,done) {
 	query.on('end',function(result) {
   		done();
   		console.log(result.rowCount + ' rows were received');
-  		console.log(JSON.stringify(result.rows,null,"	"));
+  		if (result.rowCount>0) 
+	  		console.log(JSON.stringify(result.rows,null,"	"));
  		pg.end();	
 	});
 });
