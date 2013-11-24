@@ -10,7 +10,8 @@
     "pg-query-stream" : "~0.2.0",
     "express" : "~3.4.0",
     "restangular" : "~1.1.6",
-    "winston" : "~0.7.2"
+    "winston" : "~0.7.2",
+    "nconf"  : "~0.6.8"
   },
   "devDependencies": {},
   "scripts": {

@@ -79,6 +79,7 @@ app.post('/order',function (request,response) {
 
     query.on('error', function(error) {
       logger.error('Error on creating order :',error);
+      response.json("ERROR");
     });
 
     query.on('end',function(result) {

@@ -5,15 +5,13 @@ pg.connect(conString,function(err,client,done) {
 	if (err) {
 		return console.error('could not connect ',err);
 	}
-	//var query = client.query('SELECT SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,OWNERID FROM REQUESTS');
 	var query = client.query('SELECT * from tb_currency');
 
 
 	query.on('row',function(row,result) {
-  		console.log(row.ownerid+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')	;
+  		console.log(row.currency_currency_iso_name + ' created at '+ row.currency_created + ' is worth ' + row.currency_currency_fee);
   		result.addRow(row);
 	});
-
 	query.on('end',function(result) {
   		done();
   		console.log(result.rowCount + ' rows were received');

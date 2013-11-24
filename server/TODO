@@ -1,4 +1,5 @@
 1. Add Client pooling to postgres (DONE)
 https://github.com/brianc/node-postgres 
-2. Check GeoIP
+2. Add support for nconf
+3. Check GeoIP
 https://github.com/bluesmoon/node-geoip
