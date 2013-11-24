@@ -20,23 +20,17 @@ app.get('/requests', function  (request, response) {
     if (err) {
       return logger.error('could not connect ',err);
     }
-    //var query = client.query('SELECT R.ID,U.USER_ID,SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,ALIAS,TIMES FROM REQUESTS R, USERS U where R.ownerid = U.user_id');
 
-   var query = client.query('SELECT   tb_user.user_nickname,   tb_country_iso.country_iso_country_name,   tb_service_type.service_name,   tb_request_master.request_from_city_location,'+
-                                      ' tb_request_master.request_to_city_location,   tb_request_master.request_payment_money,   tb_currency.currency_currency_iso_name, '+
-                                      ' tb_request_master.request_pick_up_time,   tb_request_master.request_description_package'+
-                                      ' FROM   public.tb_user,   public.tb_request_to_proceed,   public.tb_request_master,   public.tb_request_action, '+
-                                             ' public.tb_country_iso,   public.tb_currency,   public.tb_service_type'+
-                                      ' WHERE  tb_request_to_proceed.proceed_user_to_do_service_id = tb_service_type.service_id AND'+
-                                             ' tb_request_to_proceed.proceed_payment_currency_id = tb_currency.currency_id AND'+
-                                             ' tb_request_master.request_from_iso_country_id = tb_country_iso.country_id AND'+
-                                             ' tb_request_master.request_to_iso_country_id = tb_country_iso.country_id AND'+
-                                             ' tb_request_master.request_currency_id = tb_currency.currency_id AND'+
-                                             ' tb_request_action.action_request_master_id = tb_request_master.request_id AND'+
-                                             ' tb_request_action.action_claim_given_by_user_id = tb_user.user_id');
+    var query  = client.query(' SELECT tb_user.user_nickname as alias, S.country_iso_country_name as source, D.country_iso_country_name as destination, '+
+                              ' tb_request_master.request_description_package as subject, tb_currency.currency_currency_iso_name as currency, '+
+                              ' tb_request_master.request_payment_money as reward FROM  tb_user,  tb_request_master,  tb_country_iso S, '+
+                              ' tb_country_iso D,  tb_currency WHERE  tb_request_master.request_from_iso_country_id = S.country_id AND '+
+                              ' tb_request_master.request_to_iso_country_id = D.country_id AND  tb_request_master.request_created_by_user_id = tb_user.user_id AND '+
+                              ' tb_request_master.request_currency_id = tb_currency.currency_id');
 
     query.on('row',function(row,result) {
-        logger.info(row.alias+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
+        logger.info(row.alias+ ' wants to get a '+ row.subject.trim() + ' from ' +
+                    row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + row.currency)  ;
         result.addRow(row);
     });
 
@@ -88,18 +82,18 @@ app.post('/order',function (request,response) {
     // update request counter
 
     // insert new order
-    var query = client.query('INSERT INTO tb_request_action(action_created, action_request_master_id, action_claim_given_by_user_id)   VALUES ($1,$2,$3)',[new Date(), request_id, user_id]);
+    var query = client.query('INSERT INTO tb_request_action(action_request_master_id, action_claim_given_by_user_id) VALUES ($1,$2)',
+                              [request_id, user_id]);
 
     query.on('error', function(error) {
       logger.error('Error on creating order :',error);
-      response.json("ERROR");
     });
 
     query.on('end',function(result) {
         done();
-        logger.info("Order created with id "+result.oid);
+        logger.info("Order created "+result);
         // return order id
-        response.json(result.oid);
+        response.json(result);
     });
   });
   

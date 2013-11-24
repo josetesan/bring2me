@@ -1,5 +1,5 @@
 var pg = require('pg');
-var conString = "postgres://postgres:5432@localhost/postgres";
+var conString = "postgres://postgres:5432@localhost/bring2me";
 
 pg.connect(conString,function(err,client,done) {
 	if (err) {
