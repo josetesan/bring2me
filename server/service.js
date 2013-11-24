@@ -22,18 +22,18 @@ app.get('/requests', function  (request, response) {
     }
     //var query = client.query('SELECT R.ID,U.USER_ID,SOURCE,DESTINATION,SUBJECT,REWARD,DUEDATE,ALIAS,TIMES FROM REQUESTS R, USERS U where R.ownerid = U.user_id');
 
-   var query = client.query('SELECT   tb_user.user_nickname,   tb_country_iso.country_iso_country_name,   tb_service_type.service_name,   tb_request_master.request_from_city_location, 
-                                      tb_request_master.request_to_city_location,   tb_request_master.request_payment_money,   tb_currency.currency_currency_iso_name, 
-                                      tb_request_master.request_pick_up_time,   tb_request_master.request_description_package
-                                      FROM   public.tb_user,   public.tb_request_to_proceed,   public.tb_request_master,   public.tb_request_action, 
-                                             public.tb_country_iso,   public.tb_currency,   public.tb_service_type
-                                      WHERE  tb_request_to_proceed.proceed_user_to_do_service_id = tb_service_type.service_id AND
-                                             tb_request_to_proceed.proceed_payment_currency_id = tb_currency.currency_id AND
-                                             tb_request_master.request_from_iso_country_id = tb_country_iso.country_id AND
-                                             tb_request_master.request_to_iso_country_id = tb_country_iso.country_id AND
-                                             tb_request_master.request_currency_id = tb_currency.currency_id AND
-                                             tb_request_action.action_request_master_id = tb_request_master.request_id AND
-                                             tb_request_action.action_claim_given_by_user_id = tb_user.user_id');
+   var query = client.query('SELECT   tb_user.user_nickname,   tb_country_iso.country_iso_country_name,   tb_service_type.service_name,   tb_request_master.request_from_city_location,'+
+                                      ' tb_request_master.request_to_city_location,   tb_request_master.request_payment_money,   tb_currency.currency_currency_iso_name, '+
+                                      ' tb_request_master.request_pick_up_time,   tb_request_master.request_description_package'+
+                                      ' FROM   public.tb_user,   public.tb_request_to_proceed,   public.tb_request_master,   public.tb_request_action, '+
+                                             ' public.tb_country_iso,   public.tb_currency,   public.tb_service_type'+
+                                      ' WHERE  tb_request_to_proceed.proceed_user_to_do_service_id = tb_service_type.service_id AND'+
+                                             ' tb_request_to_proceed.proceed_payment_currency_id = tb_currency.currency_id AND'+
+                                             ' tb_request_master.request_from_iso_country_id = tb_country_iso.country_id AND'+
+                                             ' tb_request_master.request_to_iso_country_id = tb_country_iso.country_id AND'+
+                                             ' tb_request_master.request_currency_id = tb_currency.currency_id AND'+
+                                             ' tb_request_action.action_request_master_id = tb_request_master.request_id AND'+
+                                             ' tb_request_action.action_claim_given_by_user_id = tb_user.user_id');
 
     query.on('row',function(row,result) {
         logger.info(row.alias+ ' wants to get a '+ row.subject.trim() + ' from ' + row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + '€')  ;
