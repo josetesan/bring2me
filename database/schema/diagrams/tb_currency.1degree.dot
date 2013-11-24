@@ -1,4 +1,4 @@
-// dot 2.34.0 on Linux 3.12.0-1-MANJARO
+// dot 2.34.0 on Linux 3.12.1-1-MANJARO
 // SchemaSpy rev 590
 digraph "oneDegreeRelationshipsDiagram" {
   graph [
@@ -32,7 +32,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="currency_currency_fee" COLSPAN="2" ALIGN="LEFT">currency_currency_fee</TD><TD PORT="currency_currency_fee.type" ALIGN="LEFT">numeric[131089]</TD></TR>
       <TR><TD PORT="attribute01" COLSPAN="2" ALIGN="LEFT">attribute01</TD><TD PORT="attribute01.type" ALIGN="LEFT">varchar[10]</TD></TR>
       <TR><TD PORT="artribute02" COLSPAN="2" ALIGN="LEFT">artribute02</TD><TD PORT="artribute02.type" ALIGN="LEFT">varchar[10]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="tb_currency.html"
     tooltip="tb_currency"
@@ -49,10 +49,12 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="request_from_iso_country_id" COLSPAN="3" ALIGN="LEFT">request_from_iso_country_id</TD></TR>
       <TR><TD PORT="request_to_iso_country_id" COLSPAN="3" ALIGN="LEFT">request_to_iso_country_id</TD></TR>
       <TR><TD PORT="request_from_city_location" COLSPAN="3" ALIGN="LEFT">request_from_city_location</TD></TR>
+      <TR><TD PORT="request_from_post_code" COLSPAN="3" ALIGN="LEFT">request_from_post_code</TD></TR>
       <TR><TD PORT="request_to_city_location" COLSPAN="3" ALIGN="LEFT">request_to_city_location</TD></TR>
       <TR><TD PORT="request_pick_up_address" COLSPAN="3" ALIGN="LEFT">request_pick_up_address</TD></TR>
       <TR><TD PORT="request_pick_up_address_url" COLSPAN="3" ALIGN="LEFT">request_pick_up_address_url</TD></TR>
       <TR><TD PORT="request_pick_up_time" COLSPAN="3" ALIGN="LEFT">request_pick_up_time</TD></TR>
+      <TR><TD PORT="request_to_post_code" COLSPAN="3" ALIGN="LEFT">request_to_post_code</TD></TR>
       <TR><TD PORT="request_deliver_address" COLSPAN="3" ALIGN="LEFT">request_deliver_address</TD></TR>
       <TR><TD PORT="request_deliver_address_url" COLSPAN="3" ALIGN="LEFT">request_deliver_address_url</TD></TR>
       <TR><TD PORT="request_weight_package" COLSPAN="3" ALIGN="LEFT">request_weight_package</TD></TR>
@@ -64,7 +66,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="attribute01" COLSPAN="3" ALIGN="LEFT">attribute01</TD></TR>
       <TR><TD PORT="attribute02" COLSPAN="3" ALIGN="LEFT">attribute02</TD></TR>
       <TR><TD PORT="attribute03" COLSPAN="3" ALIGN="LEFT">attribute03</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="tb_request_master.html"
     tooltip="tb_request_master"
@@ -83,7 +85,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="attribute01" COLSPAN="3" ALIGN="LEFT">attribute01</TD></TR>
       <TR><TD PORT="attribute02" COLSPAN="3" ALIGN="LEFT">attribute02</TD></TR>
       <TR><TD PORT="attribute03" COLSPAN="3" ALIGN="LEFT">attribute03</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tb_request_to_proceed.html"
     tooltip="tb_request_to_proceed"

@@ -4,7 +4,7 @@
   <!-- SchemaSpy rev 590 -->
   <title>SchemaSpy - postgres.dev - Constraints</title>
   <link rel=stylesheet href='schemaSpy.css' type='text/css'>
-  <meta HTTP-EQUIV='Content-Type' CONTENT='text/html; charset=ISO-8859-1'>
+  <meta HTTP-EQUIV='Content-Type' CONTENT='text/html; charset=UTF-8'>
   <SCRIPT LANGUAGE='JavaScript' TYPE='text/javascript' SRC='jquery.js'></SCRIPT>
   <SCRIPT LANGUAGE='JavaScript' TYPE='text/javascript' SRC='schemaSpy.js'></SCRIPT>
 </head>
@@ -31,10 +31,9 @@
 <div class='indent'>
 <table width='100%'>
 <tr><td class='container' valign='bottom'><b>
-15 Foreign Key Constraints:</b>
+16 Foreign Key Constraints:</b>
 </td><td class='container' align='right'>
 <table>
-  <tr><td class='container' align='right' valign='top'><a href='http://sourceforge.net' target='_blank'><img src='http://sourceforge.net/sflogo.php?group_id=137197&amp;type=1' alt='SourceForge.net' border='0' height='31' width='88'></a></td></tr>
 <tr><td class='container'>
 <div style="margin-right: 2pt;">
 <script type="text/javascript"><!--
@@ -169,6 +168,13 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
  </tr>
   <tr class='even'>
+  <td class='detail'>tb_user_conn_connection_user_id_fkey</td>
+  <td class='detail'><a href='tables/tb_user_conn.html'>tb_user_conn</a>.connection_user_id</td>
+  <td class='detail'><a href='tables/tb_user.html'>tb_user</a>.user_id</td>
+  <td class='detail'><span title='Restrict delete:
+ Parent cannot be deleted if children exist'>Restrict delete&nbsp;</span></td>
+ </tr>
+  <tr class='odd'>
   <td class='detail'>tb_user_user_country_id_fkey</td>
   <td class='detail'><a href='tables/tb_user.html'>tb_user</a>.user_country_id</td>
   <td class='detail'><a href='tables/tb_country_iso.html'>tb_country_iso</a>.country_id</td>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Saved parameters for SchemaSpyGUI. Load it with Load Menu</comment>
+<entry key="pathOutputTField">/home/josetesan/tools/schemaSpy/bring2me</entry>
+<entry key="descTArea"/>
+<entry key="aHTMLCBox">true</entry>
+<entry key="dbNameTField">postgres</entry>
+<entry key="tNameRExTField"/>
+<entry key="dbUserTField">bring2me</entry>
+<entry key="tNameExRExTField"/>
+<entry key="cssPathTField"/>
+<entry key="dbHostTField">localhost</entry>
+<entry key="dbTypeCBox">pgsql</entry>
+<entry key="noLogoCBox">true</entry>
+<entry key="dbDriverPTField">/home/josetesan/tools/schemaSpy/jdbc/postgresql-9.3-1100-jdbc41.jar</entry>
+<entry key="allSchemasCBox">false</entry>
+<entry key="highQuCBox">true</entry>
+<entry key="propertiePathTField"/>
+<entry key="colExRelCBox">false</entry>
+<entry key="charsetComBox">UTF-8</entry>
+<entry key="noAdsCBox">false</entry>
+<entry key="schemaTField">dev</entry>
+<entry key="cNameRExTField"/>
+<entry key="propertiesTField"/>
+<entry key="metaFilePathTField"/>
+<entry key="dbPortTField">5432</entry>
+<entry key="showFinishCBox">true</entry>
+<entry key="savePassCBox">false</entry>
+<entry key="fontSizeTField"/>
+<entry key="noHTMLCBox">false</entry>
+<entry key="dincFKCBox">false</entry>
+<entry key="dbPwdField"/>
+<entry key="sSpyPathTField">/home/josetesan/tools/schemaSpy/schemaSpy_5.0.0.jar</entry>
+<entry key="railsCBox">false</entry>
+<entry key="lowQuCBox">false</entry>
+<entry key="noRowsBox">true</entry>
+<entry key="fontNameTField"/>
+</properties>

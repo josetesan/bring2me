@@ -6,5 +6,6 @@ tb_user
 tb_request_master
 tb_request_action
 tb_user_access_control
+tb_user_conn
 tb_rating
 tb_request_to_proceed

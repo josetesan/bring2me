@@ -1,16 +1,16 @@
 
--- create DB
+create DB
 
---CREATE DATABASE devDB
---  WITH OWNER = devdb
---       ENCODING = 'UTF8'
---       TABLESPACE = pg_default
---       LC_COLLATE = 'C'
---       LC_CTYPE = 'C'
---       CONNECTION LIMIT = -1;
+CREATE DATABASE devDB
+  WITH OWNER = devdb
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'C'
+       LC_CTYPE = 'C'
+       CONNECTION LIMIT = -1;
 
---COMMENT ON DATABASE devDB
---  IS 'default administrative connection database';
+COMMENT ON DATABASE devDB
+  IS 'default administrative connection database';
 
 
 -- create db schema . For the time being, there is only one schema

@@ -1,4 +1,4 @@
-// dot 2.34.0 on Linux 3.12.0-1-MANJARO
+// dot 2.34.0 on Linux 3.12.1-1-MANJARO
 // SchemaSpy rev 590
 digraph "oneDegreeRelationshipsDiagram" {
   graph [
@@ -31,7 +31,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="payment_active" COLSPAN="2" ALIGN="LEFT">payment_active</TD><TD PORT="payment_active.type" ALIGN="LEFT">varchar[10]</TD></TR>
       <TR><TD PORT="attribute01" COLSPAN="2" ALIGN="LEFT">attribute01</TD><TD PORT="attribute01.type" ALIGN="LEFT">varchar[10]</TD></TR>
       <TR><TD PORT="attribute02" COLSPAN="2" ALIGN="LEFT">attribute02</TD><TD PORT="attribute02.type" ALIGN="LEFT">varchar[10]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="tb_payment_type.html"
     tooltip="tb_payment_type"
@@ -50,7 +50,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="attribute01" COLSPAN="3" ALIGN="LEFT">attribute01</TD></TR>
       <TR><TD PORT="attribute02" COLSPAN="3" ALIGN="LEFT">attribute02</TD></TR>
       <TR><TD PORT="attribute03" COLSPAN="3" ALIGN="LEFT">attribute03</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="tb_request_to_proceed.html"
     tooltip="tb_request_to_proceed"
