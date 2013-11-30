@@ -1,3 +1,3 @@
-var conString = "postgres://postgres:5432@localhost/bring2me";
+var conString = "postgres://josete:5432@localhost/josete";
 module.exports = conString;
     
