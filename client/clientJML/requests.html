@@ -1,0 +1,18 @@
+
+
+
+
+<h6>Displaying {{requests.length}} Requests</h6>
+<div class="media" ng-repeat='request in requests' ng-controller="requestsCtrl">
+	<div class="pull-right">
+		{{request.alias|uppercase}}
+		<img class="media-object" src="" alt= "avatar de {{request.alias}}"/>
+	</div>
+	<div class="media-body">
+		<h4 class="media-heading">From {{request.source}} to {{request.destination}}</h4>
+		<p>{{request.subject}} for {{request.reward|currency}} no later than {{request.duedate | date:'dd/MM/yyyy'}}<br/>
+			<span class="badge">{{request.times}}</span> People already applied<br/>
+		    <div class='btn btn-primary' ng-click='createOrder(request.id,request.user_id)'>I'll doo it!</div>
+		</p>
+	</div>
+</div>

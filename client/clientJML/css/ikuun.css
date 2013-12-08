@@ -1,0 +1,23 @@
+
+
+#ibox2 {
+font-size:small; /*small*/
+background-color: white;
+padding: 20px; 
+width: 80%;
+margin:1px;
+}
+
+#page-wrap { 
+  width: 600px; 
+  margin: 15px auto; 
+  position: relative; 
+}
+
+#sidebar { 
+  width: 190px; 
+  position: fixed; 
+  margin-left: 900px; 
+}
+
+
