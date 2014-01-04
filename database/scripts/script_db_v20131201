@@ -165,7 +165,7 @@ CREATE OR REPLACE FUNCTION public.prd_tb_payment_type() RETURNS TRIGGER AS
 
  $BODY$
     BEGIN
-	New.payment_id = nextval('sql_id_administration');
+	New.payment_id = nextval('sq_payment_type');
 	New.payment_created = now();
 		RETURN NEW;
     END
