@@ -1,4 +1,4 @@
-angular.module('bring2me', ['ngRoute','requestsService'])
+angular.module('ikuun', ['ngRoute','requestsService'])
 	.config(appRouter);
 
 function appRouter ($routeProvider) {
