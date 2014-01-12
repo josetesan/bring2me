@@ -34,7 +34,10 @@ body {
 
 .margin100 {
   margin-left: 100px;
-  margin-right: 100px;
+  margin-right: 100px; 
+  margin-bottom: 0px;
+  position: absolute;
+  font-size: 10px;
 }
 
 /* CUSTOMIZE THE CAROUSEL
