@@ -1,0 +1,28 @@
+how it works
+
+Ikuun offers you three different ways to connect to people-to-to-people :
+
+I give you a ride
+I need a ride
+I need stuff 
+
+I give you a ride
+-------------------
+Someone (driver/requester ) traveling from point A to point B willing to offer a ride to another people, and so, to share the cost of the trip. 
+
+The driver establishes the cost, per person , for each ride. In the even the driver is willing to share multiple seats, let’s say two, the driver has to create two different requests, one for each seat. Each offering would have its own cost per se.
+
+For each single request, the requester could receive up to a maximum of five offers (no betting), driver would have to choose among one of the offers received
+
+I need a ride
+-------------------
+Someone  (passenger/requester) that has to go to a point B logs a request expecting someone to offer a ride, from a given location established by the passenger to that point B. 
+Passenger creates the request indicating the amount of money willing to pay for such ride (service). 
+
+Passenger could receive up to a maximum of five offers, having to choose among one of them. 
+
+I need stuff 
+-------------------
+Have you ever forgotten, or need, something but you do not have it with you at moment?  And that thing is miles away from where you are right now. What do you do then? We offer you the possibility to connect to someone willing to get that stuff for you and deliver it where you are. 
+
+Just log a request and wait for someone willing to pick it up from a the location you want, and deliver it right to you. 
