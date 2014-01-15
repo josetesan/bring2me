@@ -22,6 +22,7 @@ body {
   z-index: 20;
 }
 
+
 /* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper .container {
   padding-left: 0;
@@ -30,6 +31,7 @@ body {
 .navbar-wrapper .navbar {
   padding-left: 40px;
   padding-right: 40px;
+
 }
 
 .margin100 {
