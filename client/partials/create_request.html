@@ -27,7 +27,7 @@
   </head>
 <!-- NAVBAR
 ================================================== -->
-     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+     <div class="navbar   navbar-inverse" role="navigation">
       <div class="container">
                <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,8 +58,9 @@
               </ul>
             </div>
       </div><!-- /.container -->
-    </div><!-- /.navbar -->
-
+    </div>
+    
+     
 
       <p><p>    <p><p>    <p><p> <br><br><br>
 
@@ -73,26 +74,35 @@
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
-      
 
-      <!-- START THE FEATURETTES -->
-        
-    <div ng-app="request_master">
-  <tabs>
-    <pane title="Localization">
-      Date: {{ '2012-04-01' | date:'fullDate' }} <br>
-      Currency: {{ 123456 | currency }} <br>
-      Number: {{ 98765.4321 | number }} <br>
-    </pane>
-    <pane title="Pluralization">
-      <div ng-controller="BeerCounter">
-        <div ng-repeat="beerCount in beers">
-          <ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
-        </div>
-      </div>
-    </pane>
-  </tabs>
+      <script type="text/javascript" ng:autobind src="http://code.angularjs.org/0.9.19/angular-0.9.19.js"></script>
+
+<ul>
+    <li><a href ng:click="selected=1">Raise a Request. Driver</a></li>
+    <li><a href ng:click="selected=2">Raise a Request. Passenger</a></li>
+    <li><a href ng:click="selected=3">I need my stuff</a></li>
+</ul>
+
+<div ng:show="selected == 1">
+    This is first content...
 </div>
+
+<div ng:show="selected == 2">
+    This is second content...
+</div>
+
+<div ng:show="selected == 3">
+    This is third content...
+</div>
+      
+        
+        
+        
+        
+        
+      <!-- START THE FEATURETTES -->
+
+  
     
         
 
@@ -128,33 +138,70 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
+        <div class="col-md-7">
+      
+            
+            
+            <h2 class="featurette-heading">Existing Customer<span class="text-muted"></span></h2>
+          <p class="lead">Enter your email account and password to get into ikuun</p>
+        </div>
         <div class="col-md-5">
-         
-                    <form ng-controller='loginCtrl' ng-submit='login()' class="form-signup">
+          
+            <form ng-controller='loginCtrl' ng-submit='login()' class="form-signin">
 	<h2 class="form-signin-heading">Please sign in</h2>
 	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
 	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-	<input type="text"    name="year"    class="form-control" ng-model="user.year"    placeholder="Year of Brith" autofocus/>
-	<input type="text"    name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>                        
-        <label class="checkbox">
-		
+	<label class="checkbox">
+		<input type="checkbox" value="remember-me"/>Remember me
+
                 </label>
-	<button class="btn btn-lg btn-primary btn-block" type="submit">sign up</button>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>
-    
             
-            
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Sing Up<span class="text-muted"> New user. Welcome</span></h2>
-          <p class="lead">To join ikuun network you need to sign up, for free.<font color=#99BBBB> Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
+          </div>
       </div>
+ 
 
         
     
       <!-- /END THE FEATURETTES -->
 
+        
+              <!-- START THE FEATURETTES 2 -->
+ 
+        
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+      
+            
+            
+            <h2 class="featurette-heading">Existing Customer<span class="text-muted"></span></h2>
+          <p class="lead">Enter your email account and password to get into ikuun</p>
+        </div>
+        <div class="col-md-5">
+          
+            <form ng-controller='loginCtrl' ng-submit='login()' class="form-signin">
+	<h2 class="form-signin-heading">Please sign in</h2>
+	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
+	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
+	<label class="checkbox">
+		<input type="checkbox" value="remember-me"/>Remember me
+
+                </label>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
+            
+          </div>
+      </div>
+ 
+
+        
+    
+      <!-- /END THE FEATURETTES -->
+        
+        
 
       <!-- FOOTER -->
       <footer>
@@ -179,7 +226,7 @@
   <script type="text/javascript"   src="lib/services.js"></script>
   <script type="text/javascript"   src="lib/controllers/requestsCtrl.js"></script>
   <script type="text/javascript"   src="lib/controllers/loginCtrl.js"></script>
-  <script type="text/javascript"   src="lib/panels_requester_master.js"></script>
+  <script src="js/offcanvas.js"></script>
 
 
 </body>

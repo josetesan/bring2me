@@ -8,3 +8,5 @@ function appRouter ($routeProvider) {
 		.when('/signup', { templateUrl: 'partials/login.html',  controller: 'loginCtrl'});
 
 }
+
+
