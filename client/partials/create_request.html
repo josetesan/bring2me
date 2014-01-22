@@ -124,20 +124,4 @@ var app=angular.module('myApp', [])
 
 </html>
 
-=======
 
-  <tabs>
-    <pane title="Localization">
-      Date: {{ '2012-04-01' | date:'fullDate' }} <br>
-      Currency: {{ 123456 | currency }} <br>
-      Number: {{ 98765.4321 | number }} <br>
-    </pane>
-    <pane title="Pluralization">
-      <div ng-controller="BeerCounter">
-        <div ng-repeat="beerCount in beers">
-          <ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
-        </div>
-      </div>
-    </pane>
-  </tabs>
->>>>>>> 5231b9e07c99eb3e474655d0ca273f177bd43c27
