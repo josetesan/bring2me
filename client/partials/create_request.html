@@ -1,33 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ikuun">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="iKuun homepage">
-    <meta name="author" content="muallin@gmail.com">
-<!--    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">-->
-
-    <title>iKuun</title>
-
-    <!-- Bootstrap core CSS -->
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>AngularJS + jQuery UI Tabs Example - jsFiddle demo by bens</title>
+  
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  
+  
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+    
+      <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css">
+    
+  
+    
+      <script type='text/javascript' src="http://code.angularjs.org/1.0.3/angular.min.js"></script>
+      <!-- Bootstrap core CSS -->
    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  
+  <style type='text/css'>
+  
+#tabs {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+  </style>
+  
+</head>
 
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
-  </head>
-<!-- NAVBAR
+    <!-- NAVBAR
 ================================================== -->
-     <div class="navbar   navbar-inverse" role="navigation">
+     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
                <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,176 +69,58 @@
               </ul>
             </div>
       </div><!-- /.container -->
-    </div>
-    
-     
+    </div><!-- /.navbar -->
+
 
       <p><p>    <p><p>    <p><p> <br><br><br>
+    
+<body ng-app='myApp'>
+  <div ng-controller="myCtrl">
 
-
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-
-      <script type="text/javascript" ng:autobind src="http://code.angularjs.org/0.9.19/angular-0.9.19.js"></script>
-
-<ul>
-    <li><a href ng:click="selected=1">Raise a Request. Driver</a></li>
-    <li><a href ng:click="selected=2">Raise a Request. Passenger</a></li>
-    <li><a href ng:click="selected=3">I need my stuff</a></li>
-</ul>
-
-<div ng:show="selected == 1">
-    This is first content...
+<div data-hbo-tabs id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Tab 1</a></li>
+        <li><a href="#tabs-2">Tab 2</a></li>
+        <li><a href="#tabs-3">Tab 3</a></li>
+    </ul>
+    <div id="tabs-1">
+        <p>Content for Tab 1</p>
+    </div>
+    <div id="tabs-2">
+        <p>Content for Tab 2</p>
+    </div>
+    <div id="tabs-3">
+        <p>Content for Tab 3</p>
+    </div>
 </div>
-
-<div ng:show="selected == 2">
-    This is second content...
-</div>
-
-<div ng:show="selected == 3">
-    This is third content...
-</div>
-      
-        
-        
-        
-        
-        
-      <!-- START THE FEATURETTES -->
-
+    
+    </div>
   
-    
-        
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-      
-            
-            
-            <h2 class="featurette-heading">Existing Customer<span class="text-muted"></span></h2>
-          <p class="lead">Enter your email account and password to get into ikuun</p>
-        </div>
-        <div class="col-md-5">
-          
-            <form ng-controller='loginCtrl' ng-submit='login()' class="form-signin">
-	<h2 class="form-signin-heading">Please sign in</h2>
-	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
-	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-	<label class="checkbox">
-		<input type="checkbox" value="remember-me"/>Remember me
-
-                </label>
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-</form>
-            
-          </div>
-      </div>
-
-             <!-- START THE FEATURETTES 2 -->
- 
-        
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-      
-            
-            
-            <h2 class="featurette-heading">Existing Customer<span class="text-muted"></span></h2>
-          <p class="lead">Enter your email account and password to get into ikuun</p>
-        </div>
-        <div class="col-md-5">
-          
-            <form ng-controller='loginCtrl' ng-submit='login()' class="form-signin">
-	<h2 class="form-signin-heading">Please sign in</h2>
-	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
-	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-	<label class="checkbox">
-		<input type="checkbox" value="remember-me"/>Remember me
-
-                </label>
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-</form>
-            
-          </div>
-      </div>
- 
-
-        
-    
-      <!-- /END THE FEATURETTES -->
-
-        
-              <!-- START THE FEATURETTES 2 -->
- 
-        
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-      
-            
-            
-            <h2 class="featurette-heading">Existing Customer<span class="text-muted"></span></h2>
-          <p class="lead">Enter your email account and password to get into ikuun</p>
-        </div>
-        <div class="col-md-5">
-          
-            <form ng-controller='loginCtrl' ng-submit='login()' class="form-signin">
-	<h2 class="form-signin-heading">Please sign in</h2>
-	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
-	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-	<label class="checkbox">
-		<input type="checkbox" value="remember-me"/>Remember me
-
-                </label>
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-</form>
-            
-          </div>
-      </div>
- 
-
-        
-    
-      <!-- /END THE FEATURETTES -->
-        
-        
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 iKuun.com &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  <script type="text/javascript"   src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type='text/javascript'>//<![CDATA[ 
+
+var app=angular.module('myApp', [])
+.controller('myCtrl', function ($scope) {
+})
+.directive('hboTabs', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, elm, attrs) {
+            var jqueryElm = $(elm[0]);
+            $(jqueryElm).tabs()
+        }
+    };
+})
+
+//]]>  
+
+</script>
+
      <script type="text/javascript"   src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    
-  <script type="text/javascript"   src="js/holder.js"></script>
-  <script type="text/javascript"   src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
-  <script type="text/javascript"   src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
-  <script type="text/javascript"   src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
-  <script type="text/javascript"   src="lib/app.js"></script>
-  <script type="text/javascript"   src="lib/services.js"></script>
-  <script type="text/javascript"   src="lib/controllers/requestsCtrl.js"></script>
-  <script type="text/javascript"   src="lib/controllers/loginCtrl.js"></script>
-  <script src="js/offcanvas.js"></script>
-
 
 </body>
+
+
 </html>
+
