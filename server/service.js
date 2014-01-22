@@ -157,5 +157,5 @@ var logger = new (winston.Logger)({
 
 
 app.listen(8080);
-console.log('Server running at http://127.0.0.1:8080);
-logger.info(" Server started on port 8080\n");
+console.log('Server running at http://127.0.0.1:8080');
+logger.info("Server started on port 8080\n");
