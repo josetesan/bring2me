@@ -74,44 +74,65 @@
 
       <p><p>    <p><p>    <p><p> <br><br><br>
     
-<body ng-app='myApp'>
+<body ng-app='myInformationApp'>
   <div ng-controller="myCtrl">
 
 <div data-hbo-tabs id="tabs">
     <ul>
-        <li><a href="#tabs-1">Tab 1</a></li>
-        <li><a href="#tabs-2">Tab 2</a></li>
-        <li><a href="#tabs-3">Tab 3</a></li>
+        <li><a href="#tabs-1">User Information</a></li>
+        <li><a href="#tabs-2">Raise a Request.</a></li>
+        <li><a href="#tabs-3">See my activity</a></li>
+        <li><a href="#tabs-4">See all activity</a></li>
     </ul>
     <div id="tabs-1">
         <p>
               <h1>User Info</h1>
   <label>E-mail</label>
-  <input type="email" ng-model="user.email">
+  <input type="email"  readonly  ng-model="user.email"> <br>
   <label>Last name</label>
-  <input type="text" ng-model="user.lastName">
+  <input type="text" ng-model="user.lastName" readonly required> <br>
   <label>First name</label>
-  <input type="text" ng-model="user.firstName">
-  <label>Website</label>
-  <input type="url" ng-model="user.website">
-  <label>Description</label>
-  <textarea ng-model="user.description"></textarea>
-  <label>Password</label>
-  <input type="password" ng-model="user.password">
-  <label>Password (repeat)</label>
-  <input type="password" ng-model="repeatPassword">
-  <label>Roles</label>
-  <label class="checkbox"><input type="checkbox" ng-model="user.admin"> Is Administrator</label>
-  
+  <input type="text" ng-model="user.firstName" readonly> <br>
         
-        </p>
+  <label>Gender</label>
+  <input type="text" ng-model="user.gender"> <br>
+  
+  <label>Born. Year</label>
+  <input type="text" ng-model="user.born_year"> <br>
+        
+    
+  <label>Country</label>
+  <input type="text" ng-model="user.country"> <br>
+        
+  <label>Twitter Account</label>
+  <input type="text" ng-model="user.twitter_accuount"> <br>
+          
+<button id="passwordButton" class="secondaryButton" ng-click="showChangePassword()">Change User Information</button>
+        
+<p>
+       
+  <label>Passwrod</label>
+  <input type="text" ng-model="user.twitter_accuount"> <br>
+    <button ng-click="changepwd()">Change password</button>
+<p>
+
+       
+  <label>overall rating given to you</label>
+  <input type="text" ng-model="user.rating"> <br>
+    
+<p>
+
     </div>
     <div id="tabs-2">
-        <p>Content for Tab 2</p>
+        <p>this area is ... to create a request... there are three type of requests, need stuff, give me a ride,. i need a ride.</p>
     </div>
     <div id="tabs-3">
         <p>Content for Tab 3</p>
     </div>
+    <div id="tabs-4">
+        <p>Content for Tab 4</p>
+    </div>
+    
 </div>
     
     </div>
