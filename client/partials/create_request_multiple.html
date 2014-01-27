@@ -1,5 +1,5 @@
-http://docs.angularjs.org/cookbook/advancedform
-<html ng-app="App">
+
+<html ng-app='myApp'>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>ikuun</title>
@@ -74,93 +74,69 @@ http://docs.angularjs.org/cookbook/advancedform
 
       <p><p>    <p><p>    <p><p> <br><br><br>
     
-<body ng-app='myApp'>
+<body ng-app='myInformationApp'>
   <div ng-controller="myCtrl">
 
 <div data-hbo-tabs id="tabs">
     <ul>
-        <li><a href="#tabs-1">Tab 1</a></li>
-        <li><a href="#tabs-2">Tab 2</a></li>
-        <li><a href="#tabs-3">Tab 3</a></li>
+        <li><a href="#tabs-1">User Information</a></li>
+        <li><a href="#tabs-2">Raise a Request.</a></li>
+        <li><a href="#tabs-3">See my activity</a></li>
+        <li><a href="#tabs-4">See all activity</a></li>
     </ul>
     <div id="tabs-1">
+    
+      
+      new
         
         
-        
-      <div ng-controller="UserForm">
-
-  <form name="myForm">
-
-    <label>Name:</label><br/>
-    <input type="text" ng-model="form.name" required/> <br/><br/>
-
-    <label>Address:</label> <br/>
-    <input type="text" ng-model="form.address.line1" size="33" required/> <br/>
-    <input type="text" ng-model="form.address.city" size="12" required/>,
-    <input type="text" ng-model="form.address.state" size="2"
-           ng-pattern="state" required/>
-    <input type="text" ng-model="form.address.zip" size="5"
-           ng-pattern="zip" required/><br/><br/>
-
-    <label>Contacts:</label>
-    [ <a href="" ng-click="addContact()">add</a> ]
-    <div ng-repeat="contact in form.contacts">
-      <select ng-model="contact.type">
-        <option>email</option>
-        <option>phone</option>
-        <option>pager</option>
-        <option>IM</option>
-      </select>
-      <input type="text" ng-model="contact.value" required/>
-       [ <a href="" ng-click="removeContact($index)">X</a> ]
+      
     </div>
-  <button ng-click="cancel()" ng-disabled="isCancelDisabled()">Cancel</button>
-  <button ng-click="save()" ng-disabled="isSaveDisabled()">Save</button>
-</form>
-
-<hr/>
-Debug View:
-<pre>form={{form}}</pre>
-</div>
-
-        
-        
-    </div>
+    
     <div id="tabs-2">
-        <p>Content for Tab 2</p>
+        <p>
+        
+        
+       test
+            
+            
+        
+        </p>
     </div>
     <div id="tabs-3">
         <p>Content for Tab 3</p>
     </div>
+    <div id="tabs-4">
+        <p>Content for Tab 4</p>
+    </div>
+    
 </div>
     
     </div>
   
 
-
 <script type='text/javascript'>//<![CDATA[ 
 
 var app=angular.module('myApp', [])
-.controller('myCtrl', function ($scope) {
-})
-.directive('hboTabs', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, elm, attrs) {
-            var jqueryElm = $(elm[0]);
-            $(jqueryElm).tabs()
-        }
-    };
-})
+{
+ 
+    function Ctrl($scope) {
+  $scope.templates =
+    [ { name: 'template1.html', url: 'template1.html'}
+    , { name: 'template2.html', url: 'template2.html'} ];
+  $scope.template = $scope.templates[0];
+}
+
+}
+
+
 
 //]]>  
 
 </script>
-
      <script type="text/javascript"   src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-     <script type="text/javascript"   src="js/ikuun_form.js"></script>
-     <script type="text/javascript"   src="js/ikuun.js"></script>
-
+     <script type="text/javascript" src="js/ikuun.js"> </script> 
+     
 </body>
 
 
