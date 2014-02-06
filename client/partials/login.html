@@ -113,10 +113,10 @@
          
                     <form ng-controller='loginCtrl' ng-submit='login()' class="form-signup">
 	<h2 class="form-signin-heading">Please sign in</h2>
-	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
-	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-	<input type="text"    name="year"    class="form-control" ng-model="user.year"    placeholder="Year of Brith" autofocus/>
-	<input type="text"    name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>                        
+	<input type="email"    required name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
+	<input type="password" required name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
+	<input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="Year of Brith" autofocus/>
+	<input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>            <input type="text" required    name="Security"     class="form-control" ng-model="user.security_check"    placeholder="Security Check" autofocus/>                        
         <label class="checkbox">
 		
                 </label>
