@@ -24,6 +24,16 @@
 
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
+      
+      <script>
+var x=3;
+var y=6;
+var z=x+y;
+
+
+document.write(z + "<br>");
+</script>
+      
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -112,11 +122,11 @@
         <div class="col-md-5">
          
                     <form ng-controller='loginCtrl' ng-submit='login()' class="form-signup">
-	<h2 class="form-signin-heading">Please sign in</h2>
+	<h2 class="form-signin-heading">Please sign up</h2>
 	<input type="email"    required name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
 	<input type="password" required name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
 	<input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="Year of Brith" autofocus/>
-	<input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>            <input type="text" required    name="Security"     class="form-control" ng-model="user.security_check"    placeholder="Security Check" autofocus/>                        
+	<input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>            <input type="text" required    name="Security"     class="form-control" ng-model="user.security_check"    placeholder= "security check" autofocus/>                        
         <label class="checkbox">
 		
                 </label>
@@ -161,7 +171,6 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 iKuun.com &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!-- /.container -->
@@ -180,5 +189,9 @@
   <script type="text/javascript"   src="lib/services.js"></script>
   <script type="text/javascript"   src="lib/controllers/requestsCtrl.js"></script>
   <script type="text/javascript"   src="lib/controllers/loginCtrl.js"></script>
+    
+
+
+    
   </body>
 </html>

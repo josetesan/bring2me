@@ -2,13 +2,21 @@
 <html ng-app='myApp'>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+       <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
   <title>ikuun</title>
+    
+      <link href="css/bootstrap2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+    
+     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   
-  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   
-  
-  <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
   
   
   <link rel="stylesheet" type="text/css" href="/css/result-light.css">
@@ -19,12 +27,9 @@
   
     
       <script type='text/javascript' src="http://code.angularjs.org/1.0.3/angular.min.js"></script>
-      <!-- Bootstrap core CSS -->
-   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 
-  
-  <style type='text/css'>
-  
+    
+<style>    
 #tabs {
     width: 95%;
     margin-left: auto;
@@ -35,6 +40,7 @@
   </style>
   
 </head>
+    <body
 
     <!-- NAVBAR
 ================================================== -->
@@ -76,15 +82,17 @@
         <li><a href="#tabs-3">See my activity</a></li>
         <li><a href="#tabs-4">See all activity</a></li>
     </ul>
-    <div id="tabs-1">
+    <div id="tabs-1" >
+        
+    
         <p>
               <h1>User Info</h1>
   <label>E-mail</label>
   <input type="email"  readonly  ng-model="user.email"> <br>
   <label>Last name</label>
-  <input type="text" ng-model="user.lastName" readonly required> <br>
+  <input type="text" ng-model="user.lastName" readonly > <br>
   <label>First name</label>
-  <input type="text" ng-model="user.firstName" reqired readonly> <br>
+  <input type="text" ng-model="user.firstName"  readonly> <br>
         
   <label>Gender</label>
   <input type="text" ng-model="user.gender" reqired placeholder="this is a drop down menu.. data from db"> <br>
@@ -114,7 +122,7 @@
     
 <p>
 
-    </div>
+ </div>        
     
     <div id="tabs-2">
         <p>
@@ -282,7 +290,31 @@ var app=angular.module('myApp', [])
 </script>
      <script type="text/javascript"   src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
      <script type="text/javascript" src="js/ikuun.js"> </script> 
+    <script type="text/javascript" src="lib/controllers/inside_user_form.js"></script>
      
+  
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  
+  
+  <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+    
+      <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css">
+    
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+    
+      <script type='text/javascript' src="http://code.angularjs.org/1.0.3/angular.min.js"></script>
+      <!-- Bootstrap core CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  
+  <style type='text/css'>
+  
 </body>
 
 
