@@ -3468,9 +3468,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   z-index: 1000;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
+  min-height: 15px;  /*reduce navbar top */
+  margin-bottom: 0px;  /*reduce navbar top */
+  border: 2px solid transparent;
+    
 }
 .navbar:before,
 .navbar:after {
@@ -3631,17 +3632,18 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-bottom {
   bottom: 0;
-  margin-bottom: 0;
+  margin-bottom: ;
 }
 .navbar-brand {
   float: left;
   padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 50px;
+  line-height: 15px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
+
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand {
@@ -3662,11 +3664,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-toggle .icon-bar {
   display: block;
   width: 22px;
-  height: 2px;
+  height: 20px;
   border-radius: 1px;
 }
 .navbar-toggle .icon-bar + .icon-bar {
-  margin-top: 4px;
+  margin-top: 42px;
 }
 @media (min-width: 768px) {
   .navbar-toggle {
@@ -3712,9 +3714,10 @@ textarea.input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
+    
 }
 @media (min-width: 768px) {
   .navbar-left {
@@ -3875,7 +3878,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #777777;
+    color: #e7e7e7;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -3901,9 +3904,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-link:hover {
   color: #333333;
 }
-.navbar-inverse {
-  background-color: #332c2f;
-  border-color: #181416;
+.navbar-inverse { /* ikuun */
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 .navbar-inverse .navbar-brand { /* ikkun */
   color: #577492; 
@@ -3918,12 +3921,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   color: #aa9a66;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #aa9a66;
+  color: #000000;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
+  color: #800000;
+  background-color: inherit;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
