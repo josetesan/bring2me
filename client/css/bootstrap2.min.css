@@ -3637,7 +3637,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   padding: 15px 15px;
-  font-size: 60px;
+  font-size: 20px;
   line-height: 15px;
 }
 .navbar-brand:hover,
@@ -3663,8 +3663,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .navbar-toggle .icon-bar {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 0px;
 }
 .navbar-toggle .icon-bar + .icon-bar {
@@ -3681,7 +3681,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-nav > li > a {
   padding-top: 7px;
   padding-bottom: 7px;
-  line-height: 20px;
+  line-height: 10px;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -3797,13 +3797,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .navbar-text {
   float: left;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 @media (min-width: 768px) {
   .navbar-text {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 .navbar-default {
@@ -3979,7 +3979,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     border-color: #181416;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #aa9a66;
+    color: #577492;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -4007,7 +4007,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .breadcrumb {
   padding: 8px 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   list-style: none;
   background-color: #f5f5f5;
   border-radius: 4px;
