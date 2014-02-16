@@ -4,6 +4,7 @@ var winston = require('winston');
 var conString = require('./config/postgres_pool.js');
 var pg = require('pg');
 var express = require('express');
+var url= require('url');
 var app = express()
   .use(express.compress())
   .use(express.urlencoded())
@@ -11,7 +12,6 @@ var app = express()
   .use(express.static('../client'))
   .use(express.favicon())
   .use(express.cookieParser('md5sumofconcatenatedvalues'));
-
 
 
 app.get('/requests', function  (request, response) {
@@ -22,16 +22,11 @@ app.get('/requests', function  (request, response) {
       return logger.error('could not connect ',err);
     }
 
-    var query  = client.query(' SELECT tb_user.user_nickname as alias, S.country_iso_country_name as source, D.country_iso_country_name as destination, '+
-                              ' tb_request_master.request_description_package as subject, tb_currency.currency_currency_iso_name as currency, '+
-                              ' tb_request_master.request_payment_money as reward FROM  tb_user,  tb_request_master,  tb_country_iso S, '+
-                              ' tb_country_iso D,  tb_currency WHERE  tb_request_master.request_from_iso_country_id = S.country_id AND '+
-                              ' tb_request_master.request_to_iso_country_id = D.country_id AND  tb_request_master.request_created_by_user_id = tb_user.user_id AND '+
-                              ' tb_request_master.request_currency_id = tb_currency.currency_id');
+    var query  = client.query('select * from fetch_new_request_main_page() ');
 
     query.on('row',function(row,result) {
-        logger.info(row.alias+ ' wants to get a '+ row.subject.trim() + ' from ' +
-                    row.source.trim() + ' to '+ row.destination.trim() + ' for '+ row.reward + row.currency)  ;
+        logger.info( ' wants to get a '+ row.v_subject.trim() + ' from ' +
+                    row.v_source.trim() + ' to '+ row.v_destination.trim() + ' for '+ row.v_reward + row.v_currency)  ;
         result.addRow(row);
     });
 
@@ -61,6 +56,8 @@ app.post('/users', function (request,response) {
   
 
 });
+
+
 
 
 
