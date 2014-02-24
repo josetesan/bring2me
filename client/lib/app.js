@@ -3,11 +3,11 @@ angular.module('ikuun', ['ngRoute','requestsService'])
 
 function appRouter ($routeProvider) {
 	$routeProvider
-		.when('/', 		 { templateUrl: '/partials/requests.html' , controller: 'requestsCtrl' })
-		.when('/about',  { templateUrl: '/partials/about_ikuun.html'    , controller: 'signinCtrl'    })
-		.when('/contact',  { templateUrl: '/partials/contact.html'    , controller: 'signinCtrl'    })
-		.when('/signup', { templateUrl: '/partials/login.html',  controller: 'loginCtrl'});
-		.when('/legal', { templateUrl: '/partials/legal.html',  controller: 'loginCtrl'});
+		.when('/', 		 { templateUrl: '/partials/main.html' })
+		.when('/about',  { templateUrl: '/partials/about_ikuun.html' , controller: 'controllers/signinCtrl'    })
+		.when('/contact',{ templateUrl: '/partials/contact.html'     , controller: 'controllers/signinCtrl'    })
+		.when('/login',  { templateUrl: '/partials/login.html'       , controller: 'controllers/loginCtrl'})
+		.when('/legal',  { templateUrl: '/partials/legal.html'       , controller: 'controllers/loginCtrl'});
 
 }
 
