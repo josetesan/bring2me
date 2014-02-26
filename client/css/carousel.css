@@ -94,7 +94,10 @@ body {
   margin-right: 40px;
 }
 
-
+.marketing .col-lg-42 p {
+  margin-left: 400px;
+  margin-right: 400px;
+}
 /*
  * Off Canvas
  * --------------------------------------------------
