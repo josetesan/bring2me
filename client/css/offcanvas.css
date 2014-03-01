@@ -11,6 +11,7 @@ body {
 }
 footer {
   padding: 30px 0;
+    
 }
 
 
@@ -46,9 +47,19 @@ footer {
 }
 
 .margin100 {
-  margin-left: 100px;
-  margin-right: 100px;
-   height:30px;   
+  margin-left: 700px;
+  margin-right: 10px;
+  height:10px;   
+
+}
+
+.margin_footer { /* ikuun top line  */
+position: fixed;
+  bottom: 1px;
+  right: 15px;
+    
+
+
 }
 /*
  * Off Canvas
