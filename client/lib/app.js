@@ -4,7 +4,8 @@ angular.module('ikuun', ['ngRoute', 'requestsService'])
 
 function appRouter($routeProvider) {
 	$routeProvider
-   .when('/', { templateUrl: '/partials/main.html'})
+   
+    .when('/', { templateUrl: '/partials/main.html'})
    .when('/about', { templateUrl: '/partials/about_ikuun.html', controller: 'controllers/signinCtrl'})
    .when('/contact', { templateUrl: '/partials/contact.html', controller: 'controllers/signinCtrl'})
    .when('/about-ikuun', { templateUrl: '/partials/about_ikuun.html', controller: 'controllers/loginCtrl'})
@@ -16,10 +17,12 @@ function appRouter($routeProvider) {
    .when('/legal-privacy', { templateUrl: '/partials/legal_privacy.html', controller: 'controllers/loginCtrl'})
    .when('/legal-jurisdiction',  { templateUrl: '/partials/legal_jurisdiction.html', controller: 'controllers/loginCtrl'})
    .when('/login',  { templateUrl: '/partials/login.html', controller: 'controllers/loginCtrl'})
-   .when('/app',   { templateUrl: '/partials/app_main_index.html', controller: 'controllers/signinCtrl'})
+   .when('/app',   { templateUrl: '/partials/app_ikuun_activity.html', controller: 'controllers/signinCtrl'})
    .when('/app/user-information',   { templateUrl: '/partials/app_user_information.html', controller: 'controllers/signinCtrl'})
    .when('/app/user-modify-access',   { templateUrl: '/partials/app_user_change_pwd.html', controller: 'controllers/signinCtrl'})
-   .when('/app/user-rating',   { templateUrl: '/partials/app_user_rating.html', controller: 'controllers/signinCtrl'});
+   .when('/app/user-rating',   { templateUrl: '/partials/app_user_rating.html', controller: 'controllers/signinCtrl'})
+   .when('/app/user-activity',   { templateUrl: '/partials/app_user_activity.html', controller: 'controllers/signinCtrl'})
+   .when('/app/user-create-request',   { templateUrl: '/partials/app_user_create_request.html', controller: 'controllers/signinCtrl'});
 
 }
 
