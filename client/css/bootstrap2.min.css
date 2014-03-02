@@ -1277,6 +1277,9 @@ table {
 }
 th {
   text-align: left;
+  color: #000;    
+  font-size: 11px;
+  background-repeat:repeat-x;    
 }
 .table {
   width: 100%;
@@ -2790,7 +2793,7 @@ input[type="button"].btn-block {
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
-  font-size: 14px;
+  font-size: 12px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -2815,7 +2818,7 @@ input[type="button"].btn-block {
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
-  color: #67655d;
+  color: #577492;
   white-space: nowrap;
 }
 .dropdown-menu > li > a:hover,
