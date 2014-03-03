@@ -58,54 +58,49 @@
 
 <!-- dynamic content 
 ================================================== -->
+      <hr class="featurette-divider">
     
+    <div class="container marketing">
+
     
  <div ng-controller="myCtrl">
 
 
-   <h1>From</h1>
-  <label>Country</label>
-  <input type="text"  required  ng-model="create.from_country"> <br>
- 
-      <label>Pick Up address</label>
-  <input type="text"  required ng-minlength=10  ng-model="create.request_from_pick_up_address"> <br>
- 
-      <label>City</label>
-  <input type="text"  required ng-minlength=5  ng-model="create.request_from_city_location"> <br>
- 
-      <label>Post Code</label>
-  <input type="text"  required  ng-model="create.request_from_post_code"> <br>
- 
-      <label>Location. URL</label>
-  <input type="url"     ng-model="create.request_from_pick_up_address_url"> <br>
- 
-      <label>Pick up time</label>
-  <input type="text"  required  ng-model="create.request_from_pick_up_time"> <br>
+<table cellspacing="0" width=750px>
+		
+    <tr class="first">
+				<td ><input type="text"  required  ng-model="create.from_country" class="form-control"  placeholder="From. Country" autofocus/>  </td>
+				<td> <input type="text"  required ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="To. Pick up address" autofocus/>  
+ </td>
+			</tr>
     
-        
-   <h1>To</h1>
-  <label>E-mail</label>
-  
- <label>Country</label>
-  <input type="text"  required  ng-model="create.to_country"> <br>
- 
-      <label>Pick Up address</label>
-  <input type="text"  required  ng-model="create.request_to_pick_up_address"> <br>
- 
-      <label>City</label>
-  <input type="text"  required  ng-model="create.request_to_city_location"> <br>
- 
-      <label>Post Code</label>
-  <input type="text"    ng-model="create.request_to_post_code"> <br>
- 
-      <label>Location. URL</label>
-  <input type="text"    ng-model="create.request_to_pick_up_address_url"> <br>
+<tr class="first">
+				<td ><input type="text"  required  ng-model="create.from_country" class="form-control"  placeholder="From. City/Village" autofocus/>  </td>
+				<td> <input type="text"  required ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="To. City/Village" autofocus/>  
+ </td>
+			</tr>    
+    
+<tr class="first">
+				<td ><input type="text"  required  ng-model="create.from_country" class="form-control"  placeholder="From. Address" autofocus/>  </td>
+				<td> <input type="text"  required ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="To. Address" autofocus/>  
+ </td>
+			</tr>
+    
+<tr class="first">
+				<td ><input type="text"    ng-model="create.from_country" class="form-control"  placeholder="From. PostCode" autofocus/>  </td>
+				<td> <input type="text"   ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="To. PostCode" autofocus/>  
+ </td>
+			</tr>
+    
+<tr class="first">
+				<td ><input type="text"  required  ng-model="create.from_country" class="form-control"  placeholder="From. Enter url (eg. from google maps" autofocus/>  </td>
+				<td> <input type="text"  required ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="To. Enter full url (eg. from google maps)" autofocus/>  
+ </td>
+			</tr>    
+    
+        </table>
      
-     <label>Location. URL</label>
-  <input type="text"     ng-model="create.comments"> <br>
-    </div>
-
-       <h1>Package spec</h1>
+      <h1>Package spec</h1>
 
  <label>Request Weight Package</label>
   <input type="text"  required  ng-model="create.request_weight_package"> <br>
@@ -127,3 +122,27 @@
 <hr> 
       <label>Request. Duration Minutes</label>
  <input type="text"  required  ng-model="create.request_duration_minutes"> <br>
+
+     
+     
+<br>     
+
+    
+<textarea rows="4" cols="50" type="area"  required ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="Enter Comments" autofocus/>
+</textarea>    
+    
+                           <br>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit"  ng-click="changeuserinfo()">save and submit a social request</button>        
+</form>
+                                    <br>
+                           <br>
+                           <br>
+   
+</script>
+
+     <script type="text/javascript"   src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+     <script type="text/javascript"   src="js/ikuun_form.js"></script>
+     <script type="text/javascript"   src="js/ikuun.js"></script>
+
+</body>
