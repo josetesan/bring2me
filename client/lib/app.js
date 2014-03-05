@@ -24,7 +24,8 @@ function appRouter($routeProvider) {
    .when('/app/user-modify-access',   { templateUrl: '/partials/app_user_change_pwd.html', controller: 'controllers/signinCtrl'})
    .when('/app/user-rating',   { templateUrl: '/partials/app_user_rating.html', controller: 'controllers/signinCtrl'})
    .when('/app/user-activity',   { templateUrl: '/partials/app_user_activity.html', controller: 'controllers/signinCtrl'})
-   .when('/app/user-create-request',   { templateUrl: '/partials/app_user_create_request.html', controller: 'controllers/signinCtrl'})
+   .when('/app/user-create-request-car',   { templateUrl: '/partials/app_user_create_request_car.html', controller: 'controllers/signinCtrl'})
+       .when('/app/user-create-request-stuff',   { templateUrl: '/partials/app_user_create_request_stuff.html', controller: 'controllers/signinCtrl'})
    .when('/es',   { templateUrl: '/partials/es/es_index.html', controller: 'controllers/signinCtrl'});
 
 }

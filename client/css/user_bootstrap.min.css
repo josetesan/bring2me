@@ -313,6 +313,14 @@ img {
   border-radius: 50%;
 }
 */
+
+AppTitle {
+  font-size: 85%;
+      color: #577492;
+    font-size: 20px;
+
+}
+
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -343,8 +351,10 @@ p {
     font-size: 21px;
   }
 }
+
 small {
   font-size: 85%;
+ 
 }
 cite {
   font-style: normal;
