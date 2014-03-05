@@ -76,9 +76,10 @@
             <hr class="featurette-divider">
                <h1>Modify Password</h1>
 
-  <label>Passwrod</label>
-  <input type="text" ng-model="user.twitter_accuount"> 
-  <button class="btn btn-lg btn-primary btn-block" type="submit"  ng-click="changepwd()">update password</button>        
+  <label></label>
+       <label></label> <input type="password"    required name="password"    class="form-control" ng-model="user.pwd"    placeholder="password" autofocus/>  
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit"  ng-click="changepwd()">update password</button>        
       
       
 <p>
@@ -89,26 +90,6 @@ In ikuun we always advise you to use a strong password, such as combining letter
     </div>
        
         
-
-
-<script type='text/javascript'>//<![CDATA[ 
-
-var app=angular.module('myApp', [])
-.controller('myCtrl', function ($scope) {
-})
-.directive('hboTabs', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, elm, attrs) {
-            var jqueryElm = $(elm[0]);
-            $(jqueryElm).tabs()
-        }
-    };
-})
-
-//]]>  
-
-</script>
 
      <script type="text/javascript"   src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
      <script type="text/javascript"   src="js/ikuun_form.js"></script>
