@@ -3709,7 +3709,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border-radius: 0px;
 }
 .navbar-toggle .icon-bar + .icon-bar {
-  margin-top: 42px;
+  margin-top: 20px;
 }
 @media (min-width: 768px) {
   .navbar-toggle {

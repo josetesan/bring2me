@@ -3642,13 +3642,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
   bottom: 0;
   margin-bottom: ;
 }
-.navbar-brand {
+.navbar-brand { /*company icon pic */
   float: right;
   padding: 10px 10px;
   font-size: 30px;
   line-height: 10px;
 }
 .navbar-brand:hover,
+
 .navbar-brand:focus {
   text-decoration: none;
 

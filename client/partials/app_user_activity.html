@@ -59,8 +59,7 @@
 <!-- END BAV BAR -->
 
 <!-- dynamic content 
-================================================== -->
-    
+
 
 <h3>Displaying {{requests.length}} Requests</h3>
 <div class="media" ng-repeat='request in requests' ng-controller="requestsCtrl">
@@ -76,6 +75,44 @@
 		</p>
 	</div>
 </div>
+ -->
+    
+    
+    <!-- dynamic content 
+================================================== -->
+
+                <hr class="featurette-divider">
+    <AppTitle><img src="/images/shareuser.png" heigth="30" width="30" >all my ikuun activity</AppTitle>     
+            <hr class="featurette-divider">
+    
+<div>
+	<div class='table-responsive'>
+		<table class='table table-hover'>
+			<thead>
+				<th>ALIAS</th>
+				<th>SOURCE</th>
+				<th>DESTINATION</th>
+				<th>SUBJECT</th>
+				<th>REWARD</th>
+				<th>DUEDATE</th>
+				<th>TIMES</th>
+				<th>form</th>
+			</thead>
+			<tr ng-repeat='request in requests'>
+				<td>{{request.alias}}</td>
+				<td>{{request.source}}</td>
+				<td>{{request.destination}}</td>
+				<td>{{request.subject}}</td>
+				<td>{{request.reward}}</td>
+				<td>{{request.duedate}}</td>
+				<td><span class="badge">{{request.times}}</span></td>
+				<td><button class='btn btn-lg btn-primary btn-block' ng-click='createOrder(request.id,request.user_id)'>ikuun!</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+    
+    
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
