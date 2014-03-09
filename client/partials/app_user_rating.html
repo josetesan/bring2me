@@ -75,11 +75,20 @@
 
 
              <hr class="featurette-divider">
-               <h1>Rating</h1>
+    <AppTitle><img src="/images/shareuser.png" heigth="30" width="30" >ratings</AppTitle>     
+             <hr class="featurette-divider">
 
-  <label>overall rating given to you</label>
-  <input type="text" ng-model="user.rating"> <br>
-      <button class="btn btn-lg btn-primary btn-block" type="submit"  ng-click="changepwd()">update password</button>        
+    
+        <input type="text"    readonly class="form-control" ng-model="user.rating"    placeholder="rating given to you" autofocus/>  
+      <br>
+      
+      
+      
+          <hr class="featurette-divider">
+    <AppTitle><img src="/images/shareuser.png" heigth="30" width="30" >rate others for the service provided to you</AppTitle>     
+             <hr class="featurette-divider">
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit"  ng-click="updaterating()">update password</button>        
 
 <p>
 
