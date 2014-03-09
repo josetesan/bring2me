@@ -107,43 +107,66 @@
      
 
      
-      <hr class="featurette-divider">
-
-       <AppTitle>Car Sharing. Specification</AppTitle>
-      <hr class="featurette-divider">
-
- <label>Request Weight Package</label>
-  <input type="text"  required  ng-model="create.request_weight_package"> <br>
- 
+<hr class="featurette-divider">
+    <AppTitle><img src="/images/shareuser.png" heigth="30" width="30" >car sharing information</AppTitle>     
+<hr class="featurette-divider">
     
-      <label>Description of the package</label>
-  <input type="text"  required  ng-model="create.request_description_package"> <br>
- 
-      <label>Payment</label>
-  <input type="text"  required  ng-model="create.request_payment_money"> <br>
- 
-      <label>Currency</label>
- <input type="text"  required  ng-model="create.request_currency_id"> <br>
- 
-   <label>Further Comments</label>
- <input type="text"  required  ng-model="create.request_comments"> <br>
- 
-     
-<hr> 
-      <label>Request. Duration Minutes</label>
- <input type="text"  required  ng-model="create.request_duration_minutes"> <br>
-
-     
-     
-     
-     
-<br>     
 
     
-<textarea rows="4" cols="50" type="area"  required ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="Enter Comments" autofocus/>
+<textarea rows="4" cols="50" type="area"  required ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="provide informtion about car sharing service you provided" autofocus/>
 </textarea>    
     
                            <br>
+
+     
+     
+     
+
+
+ <hr class="featurette-divider">
+    <AppTitle> <img src="/images/shareuser.png" heigth="30" width="30" > time. request</AppTitle>     
+<hr class="featurette-divider">
+   
+
+        <table cellspacing="0" width=150px>
+		
+    <tr class="first">
+				<td > <input type="text"  required  ng-model="create.request_duration_minutes" class="form-control"   placeholder="minutes" autofocus/>  </td>
+								<td ><label>enable</label></td>
+ </td>
+			</tr>
+    
+        </table>
+
+    
+
+    
+                               <br>
+
+    
+<textarea rows="4" cols="50" type="area"  required ng-minlength=10 class="form-control" ng-model="create.request_from_pick_up_address" placeholder="further comments you would like to add" autofocus/>
+</textarea>    
+    
+                           <br>
+
+<hr class="featurette-divider">
+    <AppTitle><img src="/images/shareuser.png" heigth="30" width="30" > sharing cost</AppTitle>     
+<hr class="featurette-divider">
+
+
+  <table cellspacing="0" width=750px>
+		
+    <tr class="first">
+				<td > <input type="text"  required  ng-model="create.request_payment_money" class="form-control"   placeholder="Provide weight size" autofocus/>  </td>
+								<td > <input type="dropdown menu"  required  ng-model="create.request_currency_id" class="form-control"   placeholder="kilos/pounds" autofocus/>  </td>
+ </td>
+			</tr>
+    
+        </table>    
+
+
+    <br>       
+     
 
   <button class="btn btn-lg btn-primary btn-block" type="submit"  ng-click="changeuserinfo()">save and submit a social request</button>        
 </form>

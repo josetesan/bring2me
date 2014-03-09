@@ -228,7 +228,10 @@ table {
     border-top-color: #000 !important;
   }
   .label {
-    border: 1px solid #000;
+    border: 1px #000;
+      font-size: 18px;
+            background-color: transparent;
+
   }
   .table {
     border-collapse: collapse !important;
