@@ -19,13 +19,13 @@
 <!-- existing customer
 ================================================== -->         
             
-            <h2 class="featurette-heading">Existing Customer<span class="text-muted"></span></h2>
-          <p class="lead">Enter your email account and password to get into ikuun</p>
+            <h2 class="featurette-heading">Existing Customer</h2>
+          <p>Enter your email account and password to get into iKuun. If you forgot your password go to the end of the page.</p>
         </div>
         <div class="col-md-5">
           
             <form  data-ng-app="myApp" ng-controller='loginCtrlSignIn' ng-submit='login()' class="form-signin">
-	<h2 class="form-signin-heading">Please sign in</h2>
+	<h2 class="form-signin-heading">Sign in</h2>
 	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
 	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
 	<label class="checkbox">
@@ -52,26 +52,24 @@
         <div class="col-md-5">
          
                     <form ng-controller='loginCtrlSingUp' ng-submit='login()' class="form-signup">
-	<h2 class="form-signin-heading">Please sign up</h2>
+	<h2 class="form-signin-heading">New Customer</h2>
 	<input type="email"    required name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
 	<input type="password" required name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-	<input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="Year of Brith" autofocus/>
+	<input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="Year of birth (YYYY)" autofocus/>
 	<input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>            <input type="text" required    name="Security"     class="form-control" ng-model="user.security_check"    placeholder= "security check" autofocus/>             
-                        
-                        
-                        
+ 
                         
                           <br>
 
-	<button class="btn btn-lg btn-primary btn-block" type="submit">sign up</button>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
 </form>
     
             
             
         </div>
         <div class="col-md-7">
-          <h2 class="featurette-heading">Sing Up<span class="text-muted"> New user. Welcome</span></h2>
-          <p class="lead">To join ikuun network you need to sign up, for free.Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Sing Up</h2>
+          <p>Welcome to iKuun. To sign up only takes a few seconds. By joining the site you agree with all the legal matters of this site.  </p>
         </div>
       </div>
 
@@ -83,8 +81,8 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Forgot  your password? <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">Forgot  your password?</h2>
+          <p>Enter your email address, and in a few minutes we shall send you an email with the instructions to follow.</p>
         </div>
         <div class="col-md-5">
 
@@ -92,7 +90,7 @@
         <h2 class="form-signin-heading">Retrieve Password</h2>
         <input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
                   <br>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Send Password</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Get Password</button>
                 </form>
           
           </div>
