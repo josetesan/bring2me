@@ -14,7 +14,7 @@ var app = express()
   .use(express.cookieParser('md5sumofconcatenatedvalues'));
 
 
-app.get('/requests', function  (request, response) {
+app.get('/app', function  (request, response) {
   logger.info("Request received, answering with data");
 
   pg.connect(conString,function(err,client,done) {
@@ -22,8 +22,11 @@ app.get('/requests', function  (request, response) {
       return logger.error('could not connect ',err);
     }
 
-    var query  = client.query('select * from fetch_new_request_main_page() ');
+  //  var query  = client.query('select * from fetch_new_request_main_page() ');
 
+        var query  = client.query('select 1 ');
+
+      
     query.on('row',function(row,result) {
         logger.info( ' wants to get a '+ row.v_subject.trim() + ' from ' +
                     row.v_source.trim() + ' to '+ row.v_destination.trim() + ' for '+ row.v_reward + row.v_currency)  ;
@@ -129,6 +132,13 @@ app.post('/api/v1/auth/register',function(request, response){
 
 });
 
+app.post('/login',function(request, response){
+	logger.info("Received register request\n");
+	response.writeHead(201, {'Content-Type':'application/json'});
+	response.write("register:OK");
+	response.end();
+
+});
 
 
 function onRequest(request, response) {

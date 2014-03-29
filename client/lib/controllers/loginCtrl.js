@@ -1,10 +1,10 @@
-function loginCtrl($scope,$http) {
+function loginCtrlSignIn($scope,$http) {
 	
 	$scope.login = function () {
 
 		$http({
 			method : 'POST',
-			url : '/users',
+			url : '/app',
 			data : $scope.user
 		})
 		.success(function(data, status, headers, config) {
