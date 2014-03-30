@@ -1,4 +1,4 @@
-function loginCtrlSignIn($scope,$http) {
+/*function loginCtrlSignIn($scope,$http) {
 	
 	$scope.login = function () {
 
@@ -18,6 +18,11 @@ function loginCtrlSignIn($scope,$http) {
 			alert('Error while log-in '+status);
 		});
 	};
-}
+}*/
 
 
+var myApp = angular.module('ngAppDemo',[]);
+ 
+myApp.controller('loginCtrlSignIn', ['$scope', function($scope) {
+  $user.email = 'Hola!';
+}]);
