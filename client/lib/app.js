@@ -24,4 +24,3 @@ function appRouter($routeProvider) {
    .when('/es',   { templateUrl: '/partials/es/es_index.html', controller: 'controllers/signinCtrl'});
 
 }
-

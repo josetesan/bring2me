@@ -3,13 +3,22 @@
         	<label class="checkbox">
 <input type="checkbox" value="remember-me"/>Remember me
 http://jsfiddle.net/plantface/tuG6R/3/
+<div ng-app="app" ng-controller="MainCtrl">
+    <form name="form" valid-submit="sendFormToServer()" novalidate>
+        <label for="name" ng-class="{'error': form.$submitted && form.name.$invalid}">name</label>
+        <input id="name" name="name" type="text" required ng-model="name"></input>
+        <button type="submit">log in!</button>
+        
+        <div class="help" ng-show="form.$submitted && form.name.$invalid">(name is required)</div>
+    </form>
+</div>
+
+old
+----
+ <form ng-submit='login()' class="form-signin" name="form" valid-submit="sendFormToServer()" novalidate>
+
 ================================================== -->
-
-
-<body ng-app="app">
-
     
-
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
@@ -35,14 +44,19 @@ http://jsfiddle.net/plantface/tuG6R/3/
     
     <div ng-app="app" ng-controller="MainCtrl">
             
-    <form ng-submit='login()' class="form-signin">
+    <form name="form" valid-submit="sendFormToServer()" novalidate>
+                
+	<input id="name" type="text"    name="name" required   class="form-control" ng-model="name"    placeholder="enter email" autofocus/>
+        <label for="name" ng-class="{'alert': form.$submitted && form.name.$invalid}">email</label>
 
-	<input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email" autofocus/>
-	<input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-     
+	<input id="password" type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
+        <label for="name" ng-class="{'alert': form.$submitted && form.password.$invalid}">password</label>
+
+
                               <br>
+          <div class="help-block" ng-show="form.$submitted && form.name.$invalid">email/password required fields</div>
 
-	<button  class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	<button  class="btn btn-lg btn-warning  btn-block" type="submit">Sign in</button>
 </form>
            </div>
       </div>
@@ -67,7 +81,7 @@ http://jsfiddle.net/plantface/tuG6R/3/
                         
                           <br>
 
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+	<button class="btn btn-lg btn-warning  btn-block" type="submit">Sign up</button>
 </form>
     
             
@@ -96,7 +110,7 @@ http://jsfiddle.net/plantface/tuG6R/3/
         <h2 class="form-signin-heading">Retrieve Password</h2>
         <input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
                   <br>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Get Password</button>
+            <button class="btn btn-lg btn-warning  btn-block" type="submit">Get Password</button>
                 </form>
           
           </div>
