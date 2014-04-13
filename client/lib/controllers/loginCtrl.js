@@ -30,7 +30,11 @@ app.directive('validSubmit', [ '$parse', function($parse) {
 ]);
 
 app.controller('MainCtrl', function($scope) {
-  $scope.sendFormToServer = function() {
-    alert('sending to server...');
+  $scope.sendFormToServerSin = function() {
+    alert('if this is ok.. save info in the server');
   };
 });
+
+
+
+

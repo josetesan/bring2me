@@ -1734,6 +1734,8 @@ textarea.input-lg {
   margin-bottom: 10px;
   color: #a7a59d;
 }
+
+
 @media (min-width: 768px) {
   .form-inline .form-group {
     display: inline-block;

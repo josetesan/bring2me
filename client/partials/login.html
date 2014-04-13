@@ -16,6 +16,7 @@ http://jsfiddle.net/plantface/tuG6R/3/
 old
 ----
  <form ng-submit='login()' class="form-signin" name="form" valid-submit="sendFormToServer()" novalidate>
+<label for="name" ng-class="{'alert': form.$submitted && form.password.$invalid}">password</label>
 
 ================================================== -->
     
@@ -28,38 +29,40 @@ old
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
       
    
 <!-- existing customer
 ================================================== -->         
-            
+   <div class="row featurette">
+        <div class="col-md-7">
+      
             <h2 class="featurette-heading">Existing Customer</h2>
-          <p>Enter your email account and password to get into iKuun. If you forgot your password go to the end of the page.</p>
+          <p>Enter your email account and password to get into iKuun. If you forgot your password go to the end of the page, so you can retrieve your password</p>
         </div>
         <div class="col-md-5">
           
 	<h2 class="form-signin-heading">Sign in</h2>
     
-    <div ng-app="app" ng-controller="MainCtrl">
+    <div ng-app="app" ng-controller="MainCtrl">   <!-- controler   -->  
             
-    <form name="form" valid-submit="sendFormToServer()" novalidate>
-                
+    <form name="form" valid-submit="sendFormToServerSin()" novalidate>
+        
 	<input id="name" type="text"    name="name" required   class="form-control" ng-model="name"    placeholder="enter email" autofocus/>
-        <label for="name" ng-class="{'alert': form.$submitted && form.name.$invalid}">email</label>
-
+        <div class="help-block" ng-show="form.$submitted && form.name.$invalid">e-mail is required</div>         
+        
 	<input id="password" type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-        <label for="name" ng-class="{'alert': form.$submitted && form.password.$invalid}">password</label>
+        <div class="help-block" ng-show="form.$submitted && form.password.$invalid">password is required</div>              
 
-
-                              <br>
-          <div class="help-block" ng-show="form.$submitted && form.name.$invalid">email/password required fields</div>
+        <br>
+       <!--   <div class="help-block" ng-show="form.$submitted && form.name.$invalid">email/password required fields</div> -->
 
 	<button  class="btn btn-lg btn-warning  btn-block" type="submit">Sign in</button>
-</form>
-           </div>
-      </div>
+
+    </form>
+    
+            
+    </div>
+    </div>
 
 </div>
    
@@ -71,28 +74,40 @@ old
       <div class="row featurette">
         <div class="col-md-5">
          
-                    <form ng-controller='loginCtrlSingUp' ng-submit='login()' class="form-signup">
+     <div ng-app="app" ng-controller="loginSignUp">   <!-- controler   -->          
+         
+     <form name="form" valid-submit="sendFormToServerSup()" novalidate>   
 	<h2 class="form-signin-heading">New Customer</h2>
+         
 	<input type="email"    required name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
+    <div class="help-block" ng-show="form.$submitted && form.email.$invalid">e-mail is required</div>         
+         
 	<input type="password" required name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-	<input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="Year of birth (YYYY)" autofocus/>
-	<input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>            <input type="text" required    name="Security"     class="form-control" ng-model="user.security_check"    placeholder= "security check" autofocus/>             
- 
+    <div class="help-block" ng-show="form.$submitted && form.password.$invalid">password is required</div>         
+         
+    <input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="Year of birth (YYYY)" autofocus/>
+    <div class="help-block" ng-show="form.$submitted && form.year.$invalid">year is required</div>         
+         
+	<input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>
+    <div class="help-block" ng-show="form.$submitted && form.gender.$invalid">gender is required</div>         
+         
+    <input type="text" required    name="security"     class="form-control" ng-model="user.security_check"    placeholder= "security check" autofocus/>               <div class="help-block" ng-show="form.$submitted && form.security.$invalid">security check is required</div>         
                         
-                          <br>
+    <br>
 
 	<button class="btn btn-lg btn-warning  btn-block" type="submit">Sign up</button>
 </form>
     
-            
+       </div>     
             
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Sing Up</h2>
-          <p>Welcome to iKuun. To sign up only takes a few seconds. By joining the site you agree with all the legal matters of this site.  </p>
+          <p>Welcome to iKuun. To sign up only takes a few seconds, and indeed it is free. By joining the site you agree with all the legal matters of this site. </p>
         </div>
       </div>
 
+        
         
    
 <!-- fetch pwd
@@ -105,10 +120,14 @@ old
           <p>Enter your email address, and in a few minutes we shall send you an email with the instructions to follow.</p>
         </div>
         <div class="col-md-5">
+     <div ng-app="app" ng-controller="loginGetAcs">   <!-- controler   -->          
 
-               <form ng-controller='loginCtrl' ng-submit='login()' class="form-pwd-remainder">
+     <form name="form" valid-submit="sendFormToServerGetAcs()" novalidate>   
         <h2 class="form-signin-heading">Retrieve Password</h2>
         <input type="email"    name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
+             <div class="help-block" ng-show="form.$submitted && form.email.$invalid">email is required</div>         
+
+         
                   <br>
             <button class="btn btn-lg btn-warning  btn-block" type="submit">Get Password</button>
                 </form>
@@ -120,8 +139,9 @@ old
 
    
     </div><!-- /.container -->
+      <hr class="featurette-divider">
 
-        <a href="#app">go to app</a>
+     <a href="#app">go to app</a>
 
 
     <!-- Bootstrap core JavaScript
