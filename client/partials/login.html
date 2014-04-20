@@ -3,21 +3,7 @@
         	<label class="checkbox">
 <input type="checkbox" value="remember-me"/>Remember me
 http://jsfiddle.net/plantface/tuG6R/3/
-<div ng-app="app" ng-controller="MainCtrl">
-    <form name="form" valid-submit="sendFormToServer()" novalidate>
-        <label for="name" ng-class="{'error': form.$submitted && form.name.$invalid}">name</label>
-        <input id="name" name="name" type="text" required ng-model="name"></input>
-        <button type="submit">log in!</button>
-        
-        <div class="help" ng-show="form.$submitted && form.name.$invalid">(name is required)</div>
-    </form>
-</div>
-
-old
-----
- <form ng-submit='login()' class="form-signin" name="form" valid-submit="sendFormToServer()" novalidate>
-<label for="name" ng-class="{'alert': form.$submitted && form.password.$invalid}">password</label>
-
+http://jsfiddle.net/simpulton/XqDxG/
 ================================================== -->
     
     <div class="container marketing">
@@ -47,7 +33,7 @@ old
             
     <form name="form" valid-submit="sendFormToServerSin()" novalidate>
         
-	<input id="name" type="text"    name="name" required   class="form-control" ng-model="name"    placeholder="enter email" autofocus/>
+	<input id="name" type="text"  name="name" required   class="form-control" ng-model="user.name"    placeholder="enter email" autofocus/>
         <div class="help-block" ng-show="form.$submitted && form.name.$invalid">e-mail is required</div>         
         
 	<input id="password" type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
@@ -90,8 +76,9 @@ old
          
 	<input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>
     <div class="help-block" ng-show="form.$submitted && form.gender.$invalid">gender is required</div>         
-         
-    <input type="text" required    name="security"     class="form-control" ng-model="user.security_check"    placeholder= "security check" autofocus/>               <div class="help-block" ng-show="form.$submitted && form.security.$invalid">security check is required</div>         
+    
+        
+    <input type="text" required    name="security"     class="form-control" ng-model="user.value"    placeholder= "{{random.value}}" autofocus/>               <div class="help-block" ng-show="form.$submitted && form.security.$invalid">security check is required</div>         
                         
     <br>
 
@@ -157,8 +144,7 @@ old
   <script type="text/javascript"   src="lib/services.js"></script>
   <script type="text/javascript"   src="lib/controllers/requestsCtrl.js"></script>
   <script type="text/javascript"   src="lib/controllers/loginCtrl.js"></script>
-    
-
+  <script type="text/javascript"   src="lib/controllers/loginSignUp.js"></script>
 
     
   </body>
