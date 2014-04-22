@@ -1,6 +1,6 @@
 //var http = require('http');
 ////var client = require("redis").createClient();
-//var compress = require('compression')()
+var compress = require('compression')()
 //var csrf = require('csurf');
 var favicon =  require('static-favicon');
 var cookieParser = require('cookie-parser');
@@ -13,7 +13,7 @@ var express = require('express');
 var url= require('url');
 var app = express();
 
-//app.use(compress());
+app.use(compress);
 //app.use(csrf());
 app.use(bodyParser());
 app.use(serveStatic('../client'))
@@ -31,7 +31,7 @@ app.get('/app', function  (request, response) {
 
   //  var query  = client.query('select * from fetch_new_request_main_page() ');
 
-        var query  = client.query('select 1 ');
+    var query  = client.query('select 1 ');
 
       
     query.on('row',function(row,result) {
