@@ -1,17 +1,24 @@
 //var http = require('http');
-//var client = require("redis").createClient();
+////var client = require("redis").createClient();
+//var compress = require('compression')()
+//var csrf = require('csurf');
+var favicon =  require('static-favicon');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var serveStatic = require('serve-static');
 var winston = require('winston');
 var conString = require('./config/postgres_pool.js');
 var pg = require('pg');
 var express = require('express');
 var url= require('url');
-var app = express()
-  .use(express.compress())
-  .use(express.urlencoded())
-  .use(express.json())
-  .use(express.static('../client'))
-  .use(express.favicon())
-  .use(express.cookieParser('md5sumofconcatenatedvalues'));
+var app = express();
+
+//app.use(compress());
+//app.use(csrf());
+app.use(bodyParser());
+app.use(serveStatic('../client'))
+app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(cookieParser('md5sumofconcatenatedvalues'));
 
 
 app.get('/app', function  (request, response) {
