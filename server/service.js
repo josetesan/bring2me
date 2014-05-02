@@ -161,10 +161,10 @@ function onRequest(request, response) {
 
 var logger = new (winston.Logger)({
   transports: [
-    new winston.transports.File({ filename: 'b2me_service.log', json: false })
+    new winston.transports.File({ filename: 'logs/b2me_service.log', json: false })
   ],
   exceptionHandlers: [
-    new winston.transports.File({ filename: 'b2me_exceptions.log', json: false })
+    new winston.transports.File({ filename: 'logs/b2me_exceptions.log', json: false })
   ],
   exitOnError: false
 });
