@@ -1,0 +1,30 @@
+{
+  "name": "ikuunServer",
+  "version": "0.0.2",
+  "description": "This is the Backend to the iKuun service",
+  "main": "server/service.js",
+  "dependencies": {
+    "hiredis": "~0.1.16",
+    "redis": "~0.10.1",
+    "pg" : "~3.0.3",
+    "pg-query-stream" : "~0.4.2",
+    "express" : "~4.0.0",
+    "winston" : "~0.7.3",
+    "nconf"  : "~0.6.9",
+    "compression" : "~1.0.1",
+    "cookie-parser": "~1.0.1",
+    "static-favicon" :"~1.0.2",
+    "csurf" :"~1.1.0",
+    "serve-static" : "~1.0.4",
+    "body-parser" : "~1.0.2"
+  },
+  "devDependencies": {
+
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/service.js"
+  },
+  "author": "Jose Luis Sanchez Romero",
+  "license": "BSD-2-Clause"
+}
