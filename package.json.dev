@@ -1,8 +1,8 @@
 {
-  "name": "ikuunServer",
-  "version": "0.0.2",
-  "description": "This is the Backend to the iKuun service",
-  "main": "service.js",
+  "name": "b2meServer",
+  "version": "0.0.3",
+  "description": "This is the Backend to the Bring2Me service",
+  "main": "server/service.js",
   "dependencies": {
     "hiredis": "~0.1.16",
     "redis": "~0.10.1",
@@ -19,11 +19,18 @@
     "body-parser" : "~1.0.2"
   },
   "devDependencies": {
-
+	"grunt": "~0.4.1",
+	"grunt-contrib-concat": "~0.3.0",
+	"grunt-contrib-uglify": "~0.2.7",
+	"grunt-contrib-cssmin": "~0.7.0",
+	"grunt-usemin": "~2.0.2",
+	"grunt-contrib-copy": "~0.5.0",
+	"grunt-rev": "~0.1.0",
+	"grunt-contrib-clean": "~0.5.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node service.js"
+    "start": "node server/service.js"
   },
   "author": "Jose Luis Sanchez Romero",
   "license": "BSD-2-Clause"
