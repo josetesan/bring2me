@@ -5,7 +5,7 @@ angular.module('ikuun', ['ngRoute', 'requestsService'])
 function appRouter($routeProvider) {
 	$routeProvider
    
-    .when('/', { templateUrl: '/partials/main.html'})
+   .when('/', { templateUrl: '/partials/main.html'})
    .when('/about', { templateUrl: '/partials/about_ikuun.html', controller: 'controllers/signinCtrl'})
    .when('/contact', { templateUrl: '/partials/contact.html', controller: 'controllers/contactCtrl'})
    .when('/about-ikuun', { templateUrl: '/partials/about_ikuun.html'})

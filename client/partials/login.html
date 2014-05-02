@@ -55,32 +55,31 @@ http://jsfiddle.net/simpulton/XqDxG/
 <!-- existing customer
 ================================================== -->      
         
-      <hr class="featurette-divider">
+<hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-5">
+<div class="row featurette">
+<div class="col-md-5">
          
-     <div ng-app="app" ng-controller="loginSignUp">   <!-- controler   -->          
+<div ng-app="app" ng-controller="loginSignUp">   <!-- controler   -->          
          
-     <form name="form" valid-submit="sendFormToServerSup()" novalidate>   
+<form name="form" valid-submit="sendFormToServerSup()" novalidate>   
 	<h2 class="form-signin-heading">New Customer</h2>
          
 	<input type="email"    required name="email"    class="form-control" ng-model="user.email"    placeholder="Email address" autofocus/>
-    <div class="help-block" ng-show="form.$submitted && form.email.$invalid">e-mail is required</div>         
+ <div class="help-block" ng-show="form.$submitted && form.email.$invalid">e-mail is required</div>         
          
 	<input type="password" required name="password" class="form-control" ng-model="user.password" placeholder="Password"/>
-    <div class="help-block" ng-show="form.$submitted && form.password.$invalid">password is required</div>         
+ <div class="help-block" ng-show="form.$submitted && form.password.$invalid">password is required</div>         
          
-    <input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="Year of birth (YYYY)" autofocus/>
-    <div class="help-block" ng-show="form.$submitted && form.year.$invalid">year is required</div>         
+ <input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="Year of birth (YYYY)" autofocus/>
+ <div class="help-block" ng-show="form.$submitted && form.year.$invalid">year is required</div>         
          
 	<input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="Gender" autofocus/>
-    <div class="help-block" ng-show="form.$submitted && form.gender.$invalid">gender is required</div>         
+ <div class="help-block" ng-show="form.$submitted && form.gender.$invalid">gender is required</div>         
     
         
-    <input type="text" required    name="security"     class="form-control" ng-model="user.value"    placeholder= "{{random.value}}" autofocus/>               <div class="help-block" ng-show="form.$submitted && form.security.$invalid">security check is required</div>         
-                        
-    <br>
+ <input type="text" required    name="security"     class="form-control" ng-model="user.value"    placeholder= "{{random.value}}" autofocus/>               <div class="help-block" ng-show="form.$submitted && form.security.$invalid">security check is required</div>         
+ <br>
 
 	<button class="btn btn-lg btn-warning  btn-block" type="submit">Sign up</button>
 </form>
