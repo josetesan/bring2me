@@ -21,7 +21,7 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(cookieParser('md5sumofconcatenatedvalues'));
 
 
-app.get('/app', function  (request, response) {
+app.get('/requests', function  (request, response) {
   logger.info("Request received, answering with data");
 
   pg.connect(conString,function(err,client,done) {
@@ -64,7 +64,9 @@ app.post('/users', function (request,response) {
 
   logger.info("Received "+name+" with password " + password);
   
-
+  response.writeHead(200, {'Content-Type':'application/json'});
+  response.write("auth:OK");
+  response.end();
 });
 
 
@@ -125,7 +127,10 @@ app.get('/api/v1/auth/logout',function(request, response){
 
 
 app.post('/api/v1/auth/login',function(request, response){
-	logger.info("Received login request\n")
+	logger.info("Received login request\n");
+  var user = request.body.name;
+  var pwd = request.body.password;
+  logger.info("User "+user+" tries to login with password "+pwd);
 	response.writeHead(200, {'Content-Type':'application/json'});
 	response.write("login:OK");
 	response.end();

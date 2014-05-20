@@ -1,84 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="ikuun">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
-
-    <title>ikuun. home of social business </title>
-
-    <!-- Bootstrap core CSS -->
-     <!--  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
-
-  <link href="../css/bootstrap3.min.css" rel="stylesheet">
-            <link href="../css/offcanvas.css" rel="stylesheet">
-
-
-    <!-- Custom styles for this template -->
-    
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-      
-      
-  
-      
-  </head>
-
-  <body ng-app='myInformationApp'>
-
-          <!-- NAVBAR
-================================================== -->
-    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
-               <div class="navbar-header" >
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"><img heigth="50" width="50" src="http://createfunnylogo.com/logo/twitter/ikuun.jpg"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">User Information<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">My Information <img src='images/sp.gif' height="15" width="15">  </a> </li>
-                    <li><a href="#">Change Password <img src='images/uk.gif' height="15" width="15"> </a></li>
-                  </ul>
-                </li>
-                
-                  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">My social activity<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">My Information <img src='images/sp.gif' height="15" width="15">  </a> </li>
-                    <li><a href="#">Change Password <img src='images/uk.gif' height="15" width="15"> </a></li>
-                    <li><a href="#">My ratings <img src='images/uk.gif' height="15" width="15"> </a></li>
-                      
-                  </ul>
-                </li>
-                  
-                <li><a href="signin">See all social activity</a></li>
-                <li><a href="signin">Disconnect</a></li>
-                  
-              </ul>
-            </div>
-      </div><!-- /.container -->
-    </div><!-- /.navbar -->
-      
-      
-      
-        <div ng-controller="myCtrl">
-
 <div data-hbo-tabs id="tabs">
     <ul>
         <li><a href="#tabs-1">User Information</a></li>
@@ -109,7 +28,7 @@
   <input type="text" ng-model="user.country"  reqired placeholder="data from db.."> <br>
         
   <label>Twitter Account</label>
-  <input type="text" ng-model="user.twitter_accuount"> <br>
+  <input type="text" ng-model="user.twitter_account"> <br>
           
 <button id="passwordButton" class="secondaryButton" ng-click="showChangePassword()">Change User Information</button>
         
@@ -270,60 +189,4 @@
 </div>
     
     </div>
-      
-     
-      
-      
-      
-     <!-- FOOTER -->
-    <!--   <div class="navbar navbar-bottom navbar-inverse" role="navigation"> -->
-      <footer class="margin100">
-        <p class="pull-right"><a href="#"><img src="images/goup.svg" height="20" width="20"></a></p>
-         <p class="pull-left"><a href="https://www.facebook.com/"><img src="images/facebook.ico" height="20" width="20" ></a></p>
-        <p class="pull-left"><a href="https://twitter.com/"><img src="images/twitter.ico" height="20" width="20"></a></p>
-                  <p class="pull-left"><a href="https://linkedin.com/"><img src="images/linkedin.ico" height="20" width="20"></a></p>
 
-        
-                  
-      </footer>
-
-   
-
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-      
-</body>
-     <script type="text/javascript"   src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-     <script type="text/javascript" src="../js/ikuun.js"> </script> 
-    <script type="text/javascript" src="../lib/controllers/inside_user_form.js"></script>
-     
-  
-  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
-  
-  
-  <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-  
-  
-  <link rel="stylesheet" type="text/css" href="../css/result-light.css">
-  
-    
-      <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css">
-    
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-
-    
-      <script type='text/javascript' src="http://code.angularjs.org/1.0.3/angular.min.js"></script>
-      <!-- Bootstrap core CSS -->
-
-  
-  <style type='text/css'>
-
-
-
-
-
-</html>

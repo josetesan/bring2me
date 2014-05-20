@@ -1,106 +1,22 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="ikuun-app">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ikuun. home of social business </title>
-    
-<!-- css stuff here
-================================================== -->    
-  <link rel="stylesheet" href="/css/user_bootstrap.min.css">    
-    
-</head>
-    
-<!-- BAV BAR 
-================================================== -->
-
-
-<body>
-  <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-    <div class="container">
-     <div class="navbar-header" >
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#/app"><img heigth="50" width="50" src="http://createfunnylogo.com/logo/twitter/ikuun.jpg"></a>
-    </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#/app/user-information" class="dropdown-toggle" data-toggle="dropdown">about me<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#/app/user-information">my information </a> </li>
-            <li><a href="#/app/user-modify-access">change password </a> </li>
-            <li><a href="#/app/user-rating">ratings</a> </li>
-          </ul>
-        </li>
-          <li class="dropdown">
-          <a href="#/app/user-information" class="dropdown-toggle" data-toggle="dropdown">my ikuun activity<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-              <li><a href="#/app/user-activity">my activity</a> </li>        
-            <li><a href="#/app/user-create-request-car"><img src="images/link.png"> create a request. share a car</a> </li>   
-            <li><a href="#/app/user-create-request-stuff"><img src="images/link.png"> create a request. take my stuff</a> </li>    
-
-
-          </ul>
-        </li>
-          <li><a href="#/app">all ikuun activity</a></li>
-          
-        <li><a href="#/">disconnect</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse collapse . change language -->
-  </div><!-- /.container -->
-</div><!-- /.navbar -->
-
-<!-- END BAV BAR -->
-
-<!-- dynamic content 
-================================================== -->
-    <div class="container marketing">
-
-    <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-   
-        <div ng-controller="app-user-information">
-
-    <AppTitle><img src="/images/shareuser.png" heigth="30" width="30" >user information</AppTitle>     
-      <hr class="featurette-divider">
-
-            
     <form ng-controller='loginCtrlSingUp' ng-submit='login()' class="form-signup">
-       <input type="email"  readonly  required name="email"    class="form-control" ng-model="user.email"    placeholder="email address" autofocus/>
-        <br>
-          <input type="email"    required name="country"    class="form-control" ng-model="user.country"    placeholder="name" autofocus/>	<br>
-        
-           <input type="email"    required name="country"    class="form-control" ng-model="user.country"    placeholder="surname" >	
-      <br>  
-        <input type="email"    required name="country"    class="form-control" ng-model="user.country"    placeholder="country" >	<br>
-        <input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="year of brith" >
+     <input type="email"  readonly  required name="email"    class="form-control" ng-model="user.email"    placeholder="email address" autofocus/>
      <br>
-        <input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="gender" >              <br>           
-        
-        <input type="text"    required name="twitter"    class="form-control" ng-model="user.twitter"    placeholder="twitter account" >  
-                          <br>
-
-  <button class="btn btn-lg btn-warning btn-block" type="submit"  ng-click="changeuserinfo()">Save and Apply Changes</button>        
-</form>
+     <input type="email"    required name="country"    class="form-control" ng-model="user.country"    placeholder="name" autofocus/>	<br>
      
+     <input type="email"    required name="country"    class="form-control" ng-model="user.country"    placeholder="surname" >	
+     <br>  
+     <input type="email"    required name="country"    class="form-control" ng-model="user.country"    placeholder="country" >	<br>
+     <input type="text"    required name="year"    class="form-control" ng-model="user.year"    placeholder="year of brith" >
+     <br>
+     <input type="text"    required name="gender"    class="form-control" ng-model="user.gender"    placeholder="gender" >              <br>           
+     
+     <input type="text"    required name="twitter"    class="form-control" ng-model="user.twitter"    placeholder="twitter account" >  
+     <br>
 
-    
-            
-</script>
+     <button class="btn btn-lg btn-warning btn-block" type="submit"  ng-click="changeuserinfo()">Save and Apply Changes</button>        
+   </form>
 
-     <script type="text/javascript"   src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-     <script type="text/javascript"   src="js/ikuun_form.js"></script>
-     <script type="text/javascript"   src="js/ikuun.js"></script>
 
-</body>
-
-<!-- <label>Gender</label> -->
+   <!-- <label>Gender</label> -->
 
 
