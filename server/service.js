@@ -15,7 +15,7 @@ var app = express();
 
 app.use(compress);
 //app.use(csrf());
-app.use(bodyParser());
+app.use(bodyParser.json());
 app.use(serveStatic('client'))
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(cookieParser('md5sumofconcatenatedvalues'));
