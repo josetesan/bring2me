@@ -18,7 +18,7 @@ app.use(compress);
 app.use(bodyParser.json());
 app.use(serveStatic('client'))
 app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(cookieParser('md5sumofconcatenatedvalues'));
+app.use(cookieParser('1kuun1spr0perty0fjm!andmua!!1nandm1!agr0'));
 
 
 app.get('/requests', function  (request, response) {
@@ -166,10 +166,10 @@ function onRequest(request, response) {
 
 var logger = new (winston.Logger)({
   transports: [
-    new winston.transports.File({ filename: 'logs/b2me_service.log', json: false })
+    new winston.transports.File({ filename: '/var/log/ikuun/service.log', json: false })
   ],
   exceptionHandlers: [
-    new winston.transports.File({ filename: 'logs/b2me_exceptions.log', json: false })
+    new winston.transports.File({ filename: '/var/log/ikuun/exceptions.log', json: false })
   ],
   exitOnError: false
 });

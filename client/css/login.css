@@ -1,0 +1,216 @@
+.modal form{
+	margin-bottom:0
+}
+
+.modal .modal-main-content{
+	padding:0px 15px
+}
+
+.modal .modal-main-content .page-login-container{
+	border:solid 1px #EBEBEB;
+	margin-bottom:0px
+}
+
+.modal .modal-main-content .page-login-container form{
+	margin-bottom:0px
+}
+
+.modal .modal-main-content .page-login-container form .btn-primary{
+	margin-bottom:0px
+}
+
+.modal .modal-main-content .page-login-container .reminder-link{
+	padding:5px 0 0 1px
+}
+
+.modal p.question{
+	padding:20px 0 15px 15px
+}
+
+.modal .modal-header{
+	background:#fafafa;
+	border-bottom:1px solid #dcdddd;
+	-moz-border-radius-topleft:6px;
+	-webkit-border-top-left-radius:6px;
+	border-top-left-radius:6px;
+	-moz-border-radius-topright:6px;
+	-webkit-border-top-right-radius:6px;
+	border-top-right-radius:6px;
+	min-height:22px
+}
+
+.modal .modal-header h3{
+	font-size:18px;
+	line-height:25px
+}
+
+.modal .modal-header h3 img{
+	margin-top:-2px
+}
+
+.modal .modal-header .tip{
+	cursor:pointer
+}
+
+.modal .modal-header .close{
+	color:#f69090;
+	font-size:30px;
+	font-weight:normal;
+	margin-top:5px;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity:1
+}
+
+.login-container{
+	position:relative
+}
+
+.login-container .login{
+	background:white;
+	border:1px solid #c0c0c0;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-ms-border-radius:3px;
+	-o-border-radius:3px;
+	border-radius:3px;
+	box-shadow:3px 3px 3px rgba(0,0,0,0.17);
+	display:none;
+	font-family:Arial, "sans-serif";
+	font-size:13px;
+	margin-top:17px;
+	position:absolute;
+	padding:10px;
+	z-index:100;
+	width:228px
+}
+
+.login-container .login .login-pass,.login-container .login .login-email{
+	padding:4px 26px 4px 4px;
+	width:196px;
+	color:#333
+}
+
+.login-container .login :-moz-placeholder{
+	color:#888
+}
+
+.login-container .login :-ms-input-placeholder{
+	color:#888
+}
+
+.login-container .login ::-webkit-input-placeholder{
+	color:#888
+}
+
+.login-container .login .placeholder{
+	color:#888
+}
+
+.login-container .login .login-email{
+	background:#fff url(/images/login/login-arobase.png) no-repeat 97% 50%
+}
+
+.login-container .login .login-pass{
+	background:#fff url(/images/login/login-lock.png) no-repeat 97% 50%
+}
+
+.login-container .login .text-intro{
+	background:#F1F1E9;
+	border:1px solid #e7e7d9;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-ms-border-radius:3px;
+	-o-border-radius:3px;
+	border-radius:3px;
+	display:none;
+	margin:18px 0;
+	padding:8px
+}
+
+.login-container .login .login-arrow{
+	background:url(/images/login-arrow-menu.png) no-repeat 0 0;
+	display:block;
+	height:13px;
+	margin-top:-22px;
+	margin-bottom:14px;
+	width:25px
+}
+
+.login-container .login form{
+	margin:0
+}
+
+.login-container .login form input[type="checkbox"]{
+	margin-top:-1px
+}
+
+.login-container .login a.login-link{
+	color:#0ca9fa
+}
+
+.login-container .login a.login-link:hover,.login-container .login a.login-link:visited{
+	color:#0ca9fa;
+	text-decoration:underline
+}
+
+.login-container .login div{
+	margin:5px 0
+}
+
+.login-container .login .fb-signin{
+	margin:18px 0 18px 0
+}
+
+.login-container .login .forget-pass{
+	margin:-9px 0 9px 0
+}
+
+.login-container .login .sigin-in{
+	margin-bottom:0
+}
+
+.login-container hr{
+	border-top-color:#BDBDBD;
+	margin:9px 0
+}
+
+.login-container .btn-social,.login-container .btn-social:hover,.login-container .btn-social:visited{
+	color:white;
+	text-decoration:none
+}
+
+a.btn-fb-large{
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-ms-border-radius:3px;
+	-o-border-radius:3px;
+	border-radius:3px;
+	color:white;
+	font-size:14px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	width:175px
+}
+
+a.btn-fb-large:hover,a.btn-fb-large:visited{
+	color:white;
+	text-decoration:none
+}
+
+.menu-separator{
+	background:url(/images/login/login-line.png) repeat-x 0 50%;
+	margin:10px 0;
+	text-align:center
+}
+
+.menu-separator span{
+	background:white;
+	font-size:14px;
+	color:#9A9997;
+	padding:0 8px
+}
+
+.connexion button{
+	margin:5px 0 0 0;
+	width:100%
+}

@@ -1,0 +1,30 @@
+  <div class="login-container">
+    <div class="login">
+        <span class="login-arrow"></span>
+        <div class="text-intro"></div>
+        <form action="/login_check" method="POST">
+            <div>
+                <label></label>
+                <input type="text" class="login-email" name="_username" placeholder="My email"/>
+            </div>
+            <div>
+                <label></label>
+                <input type="password" class="login-pass" name="_password" placeholder="My password"/>
+            </div>
+            <div class="forget-pass">
+                <a href="/password-lost" class="login-link">I've forgotten my password</a>
+            </div>
+            <div>
+                <label for="remember_me_pop">
+                    <input type="checkbox" id="remember_me_pop" name="_remember_me" checked="checked">
+                    Remember me
+                </label>
+            </div>
+            <div class="connexion">
+                <button type="submit" name="_submit" class="btn-validation btn-large apply-btn-loader">
+                    Login
+               </button>
+            </div>
+        </form>
+    </div>
+</div>
