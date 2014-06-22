@@ -1,3 +1,3 @@
-var conString = "postgres://localhost:5432/action";
+var conString = "postgres://ikuunuser@localhost/ikuundb";
 module.exports = conString;
     

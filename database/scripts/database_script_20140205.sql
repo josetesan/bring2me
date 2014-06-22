@@ -1,30 +1,6 @@
-﻿-- create DB
-
---CREATE DATABASE publicDB
---  WITH OWNER = publicdb
---       ENCODING = 'UTF8'
---       TABLESPACE = pg_default
---       LC_COLLATE = 'C'
---       LC_CTYPE = 'C'
---       CONNECTION LIMIT = -1;
-
---COMMENT ON DATABASE publicDB
---  IS 'default administrative connection database';
-
-
--- create db schema . For the time being, there is only one schema
-
-
-drop schema public cascade;  
-
-
-
-CREATE SCHEMA public;
-
-GRANT ALL ON SCHEMA public TO public;
+﻿GRANT ALL ON SCHEMA public TO ikuunuser;
 COMMENT ON SCHEMA public
   IS 'dev db schema';
-
 
   
 --------------------------------------------------------------------------------------------  
@@ -79,7 +55,7 @@ create table public.tb_country_iso
 country_id INT PRIMARY KEY  NOT NULL,
 country_created timestamp,
 country_iso_country_short varchar(10) not null ,
-country_iso_country_name varchar(300) not null UNIQUE,
+country_iso_country_name varchar(64) not null UNIQUE,
 country_iso_db_language int REFERENCES public.tb_language (lg_reference_db_language_id),
 country_phone_code varchar(50),
 country_payment_fee_currency varchar(20) not null,
@@ -234,13 +210,14 @@ CREATE SEQUENCE public.sq_user
 create table public.tb_user(
 user_id INT PRIMARY KEY   NOT NULL,
 user_created timestamp  ,
-user_email varchar(300) not null UNIQUE,
-user_name varchar(200) not null,
-user_surname varchar(200) ,
+user_email varchar(64) not null UNIQUE,
+user_alias character varying(24) not null UNIQUE;
+user_name varchar(64) not null,
+user_surname varchar(64) ,
 user_country_id int REFERENCES public.tb_country_iso (country_id) not null,
 user_phone_or_mobile varchar(20),
-user_twitter_account varchar(150),
-user_gender varchar(50) not null,
+user_twitter_account varchar(64),
+user_gender varchar(16) not null,
 user_year int not null,
 attribute01 varchar(10), 
 attribute02 varchar(10), 
