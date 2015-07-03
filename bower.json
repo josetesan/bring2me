@@ -1,0 +1,21 @@
+{
+  "name": "ikuun",
+  "version": "0.0.64",
+  "homepage": "https://github.com/josetesan/bring2me",
+  "authors": [
+    "jose luis sanchez <muallin@gmail.com>",
+    "javier mora lavin <jmoralavin@gmail.com>"
+  ],
+  "main": "server/service.js",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
